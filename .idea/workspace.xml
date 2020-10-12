@@ -1,17 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="98318bd0-ae6e-4560-ac26-86feacdd3bed" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/ecommerce.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/ecommerce.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ecommerce/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce/db.sqlite3" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ecommerce/ecommerce/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce/ecommerce/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ecommerce/store/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce/store/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ecommerce/ecommerce/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce/ecommerce/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ecommerce/static/images/book.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ecommerce/static/images/book_h55O1af.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ecommerce/static/images/headphones.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ecommerce/static/images/headphones_UonEgjR.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ecommerce/static/images/shirt.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ecommerce/static/images/shirt_CKDk0Uc.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ecommerce/static/images/shoes.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ecommerce/static/images/shoes_rzP75n2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ecommerce/static/images/sourcecode.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ecommerce/static/images/sourcecode_REIZVOc.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ecommerce/static/images/watch.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ecommerce/static/images/watch_ORbUAcK.jpg" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/ecommerce/store/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce/store/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ecommerce/store/templates/store/cart.html" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce/store/templates/store/cart.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ecommerce/store/templates/store/checkout.html" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce/store/templates/store/checkout.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ecommerce/store/templates/store/main.html" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce/store/templates/store/main.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ecommerce/store/templates/store/store.html" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce/store/templates/store/store.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ecommerce/store/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce/store/views.py" afterDir="false" />
     </list>
@@ -70,10 +96,22 @@
       <workItem from="1602320526145" duration="2259000" />
       <workItem from="1602347567056" duration="1275000" />
       <workItem from="1602385054320" duration="7996000" />
+      <workItem from="1602509164680" duration="7261000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>
