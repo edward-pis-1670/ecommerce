@@ -71,22 +71,29 @@
 </div>
 
     <script type="text/javascript">
-        var shipping = '{{ order.shipping }}';
-
-        if (shipping == 'False'){
+        var Shipping = '{{ order.shipping }}';
+        var total = '{{ order.get_cart_total| floatformat:2 }}'
+        if (Shipping == 'False'){
             document.getElementById('shipping-info').innerHTML=''
         }
 
-        if (user != 'AnonymousUser'){
-            document.getElementById('user-info').innerHTML =''
-        }
+        //if (user != 'AnonymousUser'){
+            //document.getElementById('user-info').innerHTML =''
+        //}
 
-        if (shipping == 'False' && user != 'AnonymousUser'){
+        if (Shipping == 'False' && user != 'AnonymousUser'){
             //Hide entire form if user is logged in and shipping is false
             document.getElementById('form-wrapper').classList.add("hidden");
 				//Show payment if logged in user wants to buy an item that does not require shipping
             document.getElementById('payment-info').classList.remove("hidden");
 
+        }
+        if (Shipping != 'False' && user != 'AnonymousUser'){
+            document.getElementById('user-info').classList.add("hidden");
+        }
+
+        if (user == 'AnonymousUser'){
+            document.getElementById('shipping-info').classList.add('hidden')
         }
 
 
@@ -98,9 +105,9 @@
             document.getElementById('form-button').classList.add('hidden')
             document.getElementById('payment-info').classList.remove('hidden')
         } )
-        {% comment %} document.getElementById('make-payment').addEventListener('click',function(){
+        document.getElementById('make-payment').addEventListener('click',function(){
             submitFormData()
-        }) {% endcomment %}
+        })
         function submitFormData(){
             console.log('Payment button clicked')
         }
