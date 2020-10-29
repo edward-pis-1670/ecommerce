@@ -7,10 +7,10 @@
 				<form id="form">
 					<div id="user-info">
 						<div class="form-field">
-							<input required class="form-control" type="text" name="name" placeholder="Name..">
+							<input class="form-control" type="text" name="name" placeholder="Name..">
 						</div>
 						<div class="form-field">
-							<input required class="form-control" type="email" name="email" placeholder="Email..">
+							<input class="form-control" type="email" name="email" placeholder="Email..">
 						</div>
 					</div>
 					
@@ -19,7 +19,7 @@
 						<p>Shipping Information:</p>
 						<hr>
 						<div class="form-field">
-							<input class="form-control" type="text" name="address" placeholder="Address..">
+							<input class="form-control" type="text" name="adress" placeholder="Address..">
 						</div>
 						<div class="form-field">
 							<input class="form-control" type="text" name="city" placeholder="City..">
@@ -72,7 +72,7 @@
 
     <script type="text/javascript">
         var Shipping = '{{ order.shipping }}';
-        var total = '{{ order.get_cart_total| floatformat:2 }}'
+        var total = '{{ order.get_cart_total }}'
         if (Shipping == 'False'){
             document.getElementById('shipping-info').innerHTML=''
         }
@@ -105,11 +105,49 @@
             document.getElementById('form-button').classList.add('hidden')
             document.getElementById('payment-info').classList.remove('hidden')
         } )
-        document.getElementById('make-payment').addEventListener('click',function(){
+        document.getElementById('make-payment').addEventListener('click',function(e){
             submitFormData()
         })
         function submitFormData(){
             console.log('Payment button clicked')
+            var userFormData = {
+                'name':null,
+                'email': null,
+                'total':total,
+            
+            }
+            var shippingInfo = {
+                'adress':null,
+                'city': null,
+                'state':null,
+                'zipcode':null,
+            
+            }
+            if (Shipping != 'False'){
+                shippingInfo.adress = form.adress.value
+                shippingInfo.city = form.city.value
+                shippingInfo.state = form.state.value
+                shippingInfo.zipcode = form.zipcode.value
+            }
+            if (user == 'AnonymousUser'){
+                userFormData.name = form.name.value
+                userFormData.email = form.email.value
+            }     
+            var url = '/process_order/'
+            fetch(url,{
+                method:'POST',
+                headers:{
+                    'Content-Type':'application/json',
+                    'X-CSRFToken':csrftoken,
+                },
+                body:JSON.stringify({'form':userFormData,'shipping':shippingInfo}),
+            })
+            .then((response) => response.json())
+            .then((data) => {
+                console.log('Success',data);
+                alert('Transaction completed!');
+                window.location.href = '{% url 'store' %}'
+            })
         }
     </script>
 {% endblock content %}
