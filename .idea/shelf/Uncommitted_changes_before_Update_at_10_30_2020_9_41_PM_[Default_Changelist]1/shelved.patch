@@ -1,0 +1,174 @@
+Index: ecommerce/store/templates/store/main.html
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>{% load static %}\r\n<!DOCTYPE html>\r\n<html lang=\"en\">\r\n<head>\r\n    <meta charset=\"UTF-8\">\r\n    <title>STORE</title>\r\n    <link rel=\"stylesheet\" href=\"https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css\" integrity=\"sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z\" crossorigin=\"anonymous\">\r\n\r\n    <link rel=\"stylesheet\" type=\"text/css\" href=\"{% static 'css/main.css' %}\">\r\n\r\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1\">\r\n\r\n    <script type=\"text/javascript\">\r\n        var user = '{{request.user}}'\r\n        function getToken(name) {\r\n          let cookieValue = null;\r\n          if (document.cookie && document.cookie !== '') {\r\n              const cookies = document.cookie.split(';');\r\n              for (let i = 0; i < cookies.length; i++) {\r\n                  const cookie = cookies[i].trim();\r\n                  // Does this cookie string begin with the name we want?\r\n                  if (cookie.substring(0, name.length + 1) === (name + '=')) {\r\n                      cookieValue = decodeURIComponent(cookie.substring(name.length + 1));\r\n                      break;\r\n                  }\r\n              }\r\n          }\r\n          return cookieValue;\r\n      }\r\n    const csrftoken = getToken('csrftoken');\r\n    </script>\r\n\r\n\r\n</head>\r\n<body>\r\n<!--Navbar-->\r\n    <nav class=\"navbar navbar-expand-lg navbar-dark bg-dark\">\r\n  <a class=\"navbar-brand\" href=\"{% url 'store' %}\">Ecom</a>\r\n  <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarSupportedContent\" aria-controls=\"navbarSupportedContent\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\r\n    <span class=\"navbar-toggler-icon\"></span>\r\n  </button>\r\n\r\n  <div class=\"collapse navbar-collapse\" id=\"navbarSupportedContent\">\r\n    <ul class=\"navbar-nav mr-auto\">\r\n      <li class=\"nav-item active\">\r\n        <a class=\"nav-link\" href=\"{% url 'store' %}\">Store <span class=\"sr-only\">(current)</span></a>\r\n      </li>\r\n    </ul>\r\n      <div class=\"form-inline my-2 my-lg-0\">\r\n\t     \t<a href=\"#\"class=\"btn btn-warning\">Login</a>\r\n\r\n\t     \t<a href=\"{% url 'cart' %}\">\r\n\t    \t\t<img  id=\"cart-icon\" src=\"{% static 'images/cart.png' %}\">\r\n\t    \t</a>\r\n\t    \t<p id=\"cart-total\">{{ cartItems }}</p>\r\n\r\n      </div>\r\n  </div>\r\n</nav>\r\n    <div class=\"container\">\r\n        {% block content%}\r\n        {% endblock%}\r\n\r\n    </div>\r\n\r\n\r\n\r\n\r\n<script src=\"https://code.jquery.com/jquery-3.5.1.slim.min.js\" integrity=\"sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj\" crossorigin=\"anonymous\"></script>\r\n<script src=\"https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js\" integrity=\"sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN\" crossorigin=\"anonymous\"></script>\r\n<script src=\"https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js\" integrity=\"sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV\" crossorigin=\"anonymous\"></script>\r\n\r\n\r\n<script type=\"text/javascript\" src=\"{% static 'js/cart.js' %}\"></script>\r\n\r\n</body>\r\n</html>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- ecommerce/store/templates/store/main.html	(revision 74ed1ee33a68816fda0bd98ddefb2a1cb6463bff)
++++ ecommerce/store/templates/store/main.html	(date 1604068623969)
+@@ -4,29 +4,29 @@
+ <head>
+     <meta charset="UTF-8">
+     <title>STORE</title>
+-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
++    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1" />
++
++	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+ 
+-    <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
++	<link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+ 
+-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1">
+-
+     <script type="text/javascript">
+         var user = '{{request.user}}'
+         function getToken(name) {
+-          let cookieValue = null;
+-          if (document.cookie && document.cookie !== '') {
+-              const cookies = document.cookie.split(';');
+-              for (let i = 0; i < cookies.length; i++) {
+-                  const cookie = cookies[i].trim();
+-                  // Does this cookie string begin with the name we want?
+-                  if (cookie.substring(0, name.length + 1) === (name + '=')) {
+-                      cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+-                      break;
+-                  }
+-              }
+-          }
+-          return cookieValue;
+-      }
++		    var cookieValue = null;
++		    if (document.cookie && document.cookie !== '') {
++		        var cookies = document.cookie.split(';');
++		        for (var i = 0; i < cookies.length; i++) {
++		            var cookie = cookies[i].trim();
++		            // Does this cookie string begin with the name we want?
++		            if (cookie.substring(0, name.length + 1) === (name + '=')) {
++		                cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
++		                break;
++		            }
++		        }
++		    }
++		    return cookieValue;
++		}
+     const csrftoken = getToken('csrftoken');
+     </script>
+ 
+@@ -59,7 +59,7 @@
+ </nav>
+     <div class="container">
+         {% block content%}
+-        {% endblock%}
++        {% endblock content%}
+ 
+     </div>
+ 
+Index: ecommerce/store/admin.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>from django.contrib import admin\r\nfrom .models import *\r\n# Register your models here.\r\n\r\nadmin.site.register(Customer)\r\nadmin.site.register(Product)\r\nadmin.site.register(Order)\r\nadmin.site.register(OrderItem)\r\nadmin.site.register(ShippingAdress)
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- ecommerce/store/admin.py	(revision 74ed1ee33a68816fda0bd98ddefb2a1cb6463bff)
++++ ecommerce/store/admin.py	(date 1604068623982)
+@@ -6,4 +6,4 @@
+ admin.site.register(Product)
+ admin.site.register(Order)
+ admin.site.register(OrderItem)
+-admin.site.register(ShippingAdress)
+\ No newline at end of file
++admin.site.register(ShippingAddress)
+\ No newline at end of file
+Index: ecommerce/static/css/main.css
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>body{\r\n\tbackground-color: hsl(0, 0%, 98%);\r\n}\r\n\r\nh1,h2,h3,h4,h5,h6{\r\n\tcolor:hsl(0, 0%, 30%);\r\n}\r\n\r\n.box-element{\r\n\tbox-shadow:hsl(0, 0%, 80%) 0 0 16px;\r\n\tbackground-color: #fff;\r\n\tborder-radius: 4px;\r\n\tpadding: 10px;\r\n}\r\n\r\n.thumbnail{\r\n\twidth: 100%;\r\n\theight: 200px;\r\n\t-webkit-box-shadow: -1px -3px 5px -2px rgba(214,214,214,1);\r\n    -moz-box-shadow: -1px -3px 5px -2px rgba(214,214,214,1);\r\n    box-shadow: -1px -3px 5px -2px rgba(214,214,214,1);\r\n}\r\n\r\n.product{\r\n\tborder-radius: 0 0 4px 4px;\r\n}\r\n\r\n.bg-dark{\r\n\tbackground-color: #4f868c!important;\r\n}\r\n\r\n#cart-icon{\r\n\twidth:25px;\r\n\tdisplay: inline-block;\r\n\tmargin-left: 15px;\r\n}\r\n\r\n#cart-total{\r\n\tdisplay: block;\r\n\ttext-align: center;\r\n\tcolor:#fff;\r\n\tbackground-color: red;\r\n\twidth: 20px;\r\n\theight: 25px;\r\n\tborder-radius: 50%;\r\n\tfont-size: 14px;\r\n}\r\n\r\n.col-lg-4, .col-lg-6, .col-lg-8, .col-lg-12{\r\n\tmargin-top: 10px;\r\n}\r\n\r\n.btn{\r\n\tborder-radius: 0;\r\n}\r\n\r\n.row-image{\r\n\twidth: 100px;\r\n}\r\n\r\n.form-field{\r\n\twidth:250px;\r\n\tdisplay: inline-block;\r\n\tpadding: 5px;\r\n}\r\n\r\n.cart-row{\r\n\tdisplay: flex;\r\n    align-items: flex-stretch;\r\n    padding-bottom: 10px;\r\n    margin-bottom: 10px;\r\n    border-bottom: 1px solid #ececec;\r\n\r\n}\r\n\r\n.quantity{\r\n\tdisplay: inline-block;\r\n\tfont-weight: 700;\r\n\tpadding-right:10px;\r\n\r\n\r\n}\r\n\r\n.chg-quantity{\r\n\twidth: 12px;\r\n\tcursor: pointer;\r\n\tdisplay: block;\r\n\tmargin-top: 5px;\r\n\ttransition:.1s;\r\n}\r\n\r\n.chg-quantity:hover{\r\n\topacity: .6;\r\n}\r\n\r\n\r\n.hidden{\r\n\tdisplay: none!important;\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- ecommerce/static/css/main.css	(revision 74ed1ee33a68816fda0bd98ddefb2a1cb6463bff)
++++ ecommerce/static/css/main.css	(date 1604068623991)
+@@ -66,7 +66,7 @@
+ 
+ .cart-row{
+ 	display: flex;
+-    align-items: flex-stretch;
++    align-items: stretch;
+     padding-bottom: 10px;
+     margin-bottom: 10px;
+     border-bottom: 1px solid #ececec;
+Index: ecommerce/store/templates/store/cart.html
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>{% extends 'store/main.html' %}\r\n{% load static  %}\r\n\r\n{% block content %}\r\n    <div class=\"row\">\r\n        <div class=\"col-lg-12\">\r\n            <div class=\"box-element\">\r\n                <a class=\"btn btn-outline-dark\" href=\"{% url 'store'%}\">&#x2190; Continue shopping</a>\r\n                <br>\r\n                <br>\r\n                <table class=\"table\">\r\n                    <tr>\r\n                        <th><h5>Items: <strong>{{ order.get_cart_items }}</strong></h5></th>\r\n                        <th><h5>Total: <strong>{{ order.get_cart_total|floatformat:2 }}</strong></h5></th>\r\n                        <th>\r\n                            <a style=\"float:right; margin:5px\" class=\"btn btn-success\" href=\"{% url 'checkout' %}\">Check out</a>\r\n                        </th>\r\n                    </tr>\r\n                </table>\r\n            </div>\r\n            <br>\r\n            <div class=\"box-element\">\r\n                <div  class=\"cart-row\">\r\n                    <div style=\"flex: 2\"></div>\r\n                    <div style=\"flex: 2\"><strong>Item</strong></div>\r\n                    <div style=\"flex: 1\"><strong>Price</strong></div>\r\n                    <div style=\"flex: 1\"><strong>Quantity</strong></div>\r\n                    <div style=\"flex: 1\"><strong>Total</strong></div>\r\n                </div>\r\n                {% for item in items %}\r\n                <div  class=\"cart-row\">\r\n                    <div style=\"flex: 2\"><img class=\"row-image\" src=\"{{ item.product.ImageURL }}\"></div>\r\n                    <div style=\"flex: 2\">{{item.product.name }}</div>\r\n                    <div style=\"flex: 1\">{{item.product.price|floatformat:2 }}</div>\r\n                    <div style=\"flex: 1\">\r\n                        <p class=\"quantity\">{{item.quantity}}</p>\r\n                        <div class=\"quantity\">\r\n                            <img data-product ={{ item.product.id }} data-action ='add' class=\"chg-quantity update-cart\" src=\"{% static 'images/arrow-up.png'%}\">\r\n                            <img data-product ={{ item.product.id }} data-action ='remove' class=\"chg-quantity update-cart\" src=\"{% static 'images/arrow-down.png'%}\">\r\n                        </div>\r\n                    </div>\r\n                    <div style=\"flex: 1\">{{item.get_total}}</div>\r\n                </div>\r\n                {% endfor %}\r\n\r\n            </div>\r\n        </div>\r\n\r\n    </div>\r\n\r\n\r\n\r\n{% endblock content %}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- ecommerce/store/templates/store/cart.html	(revision 74ed1ee33a68816fda0bd98ddefb2a1cb6463bff)
++++ ecommerce/store/templates/store/cart.html	(date 1604068624001)
+@@ -11,9 +11,9 @@
+                 <table class="table">
+                     <tr>
+                         <th><h5>Items: <strong>{{ order.get_cart_items }}</strong></h5></th>
+-                        <th><h5>Total: <strong>{{ order.get_cart_total|floatformat:2 }}</strong></h5></th>
++                        <th><h5>Total: <strong>{{order.get_cart_total|floatformat:2}}</strong></h5></th>
+                         <th>
+-                            <a style="float:right; margin:5px" class="btn btn-success" href="{% url 'checkout' %}">Check out</a>
++                            <a style="float:right; margin:5px;" class="btn btn-success" href="{% url 'checkout' %}">Check out</a>
+                         </th>
+                     </tr>
+                 </table>
+@@ -31,7 +31,7 @@
+                 <div  class="cart-row">
+                     <div style="flex: 2"><img class="row-image" src="{{ item.product.ImageURL }}"></div>
+                     <div style="flex: 2">{{item.product.name }}</div>
+-                    <div style="flex: 1">{{item.product.price|floatformat:2 }}</div>
++                    <div style="flex: 1">{{item.product.price|floatformat:2}}</div>
+                     <div style="flex: 1">
+                         <p class="quantity">{{item.quantity}}</p>
+                         <div class="quantity">
+Index: ecommerce/store/migrations/0002_product_image.py
+===================================================================
+--- ecommerce/store/migrations/0002_product_image.py	(revision 74ed1ee33a68816fda0bd98ddefb2a1cb6463bff)
++++ ecommerce/store/migrations/0002_product_image.py	(revision 74ed1ee33a68816fda0bd98ddefb2a1cb6463bff)
+@@ -1,18 +0,0 @@
+-# Generated by Django 3.1.1 on 2020-10-11 15:14
+-
+-from django.db import migrations, models
+-
+-
+-class Migration(migrations.Migration):
+-
+-    dependencies = [
+-        ('store', '0001_initial'),
+-    ]
+-
+-    operations = [
+-        migrations.AddField(
+-            model_name='product',
+-            name='image',
+-            field=models.ImageField(blank=True, null=True, upload_to=''),
+-        ),
+-    ]
+Index: .idea/dataSources.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- .idea/dataSources.xml	(date 1604068624017)
++++ .idea/dataSources.xml	(date 1604068624017)
+@@ -0,0 +1,11 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
++    <data-source source="LOCAL" name="db" uuid="b922f783-87e8-46fc-8056-bedd09bebb1d">
++      <driver-ref>sqlite.xerial</driver-ref>
++      <synchronize>true</synchronize>
++      <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
++      <jdbc-url>jdbc:sqlite:C:\Users\HUST-1670\Desktop\ecommerce\ecommerce\db.sqlite3</jdbc-url>
++    </data-source>
++  </component>
++</project>
+\ No newline at end of file

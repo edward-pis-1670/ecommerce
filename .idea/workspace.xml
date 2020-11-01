@@ -16,11 +16,36 @@
         <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
       </path>
     </expand>
-    <select />
+    <select>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="BRANCH:origin/master" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </select>
   </component>
   <component name="ChangeListManager">
     <list default="true" id="98318bd0-ae6e-4560-ac26-86feacdd3bed" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ecommerce/db.sqlite3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ecommerce/static/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce/static/css/main.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ecommerce/static/images/shoes_fwmwSdR.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ecommerce/store/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce/store/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ecommerce/store/migrations/0002_product_image.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ecommerce/store/migrations/0003_auto_20201022_1118.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ecommerce/store/migrations/0004_auto_20201022_1223.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ecommerce/store/migrations/0005_auto_20201022_1228.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ecommerce/store/migrations/0006_auto_20201022_1230.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ecommerce/store/migrations/0007_auto_20201022_1533.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ecommerce/store/migrations/0008_auto_20201029_1459.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ecommerce/store/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce/store/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ecommerce/store/templates/store/cart.html" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce/store/templates/store/cart.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ecommerce/store/templates/store/checkout.html" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce/store/templates/store/checkout.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ecommerce/store/templates/store/main.html" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce/store/templates/store/main.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ecommerce/store/utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce/store/utils.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ecommerce/store/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce/store/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,6 +73,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
@@ -61,11 +87,12 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\HUST-1670\Desktop\ecommerce\ecommerce\static\images" />
       <recent name="C:\Users\mai.xuan.hoa\Desktop\ecommerce\ecommerce\static\images" />
       <recent name="C:\Users\mai.xuan.hoa\PycharmProjects\ecommerce\ecommerce\static\images" />
     </key>
   </component>
-  <component name="SpellCheckerSettings" BundledDictionaries="0" Folders="0" CustomDictionaries="0" Dictionaries="0" CorrectionsLimit="5" DefaultDictionary="application-level" UseSingleDictionary="true" />
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -95,18 +122,32 @@
       <workItem from="1603418949252" duration="10000" />
       <workItem from="1603418994715" duration="75000" />
       <workItem from="1603419087791" duration="59000" />
+      <workItem from="1604157630272" duration="598000" />
+      <workItem from="1604197900563" duration="11358000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="2" />
+    <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="origin/master" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
@@ -128,9 +169,21 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
+    <state width="196" height="457" key="HiddenNamespacesPopup" timestamp="1604236326905">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="196" height="457" key="HiddenNamespacesPopup/0.0.1920.1040@0.0.1920.1040" timestamp="1604236326905" />
+    <state x="184" y="86" key="MergeDialog" timestamp="1604068888298">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="184" y="86" key="MergeDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1604068888298" />
     <state x="461" y="165" key="SettingsEditor" timestamp="1603295885569">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="461" y="165" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1603295885569" />
+    <state x="777" y="434" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1604068863664">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="777" y="434" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040@0.0.1920.1040" timestamp="1604068863664" />
   </component>
 </project>
