@@ -1,0 +1,562 @@
+Index: ecommerce/store/templates/store/checkout.html
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>{% extends 'store/main.html' %}\r\n{% load static  %}\r\n\r\n{% block content %}\r\n\r\n\r\n\r\n<div class=\"row\">\r\n    <div class=\"col-lg-6\">\r\n        <div class=\"box-element\" id=\"form-wrapper\">\r\n            <form id=\"form\">\r\n                <div id=\"user-info\">\r\n                    <div class=\"form-field\">\r\n                        <input required class=\"form-control\" type=\"text\" name=\"name\" placeholder=\"Name..\">\r\n                    </div>\r\n                    <div class=\"form-field\">\r\n                        <input required class=\"form-control\" type=\"email\" name=\"email\" placeholder=\"Email..\">\r\n                    </div>\r\n                </div>\r\n\r\n                <div id=\"shipping-info\">\r\n                    <hr>\r\n                    <p>Shipping Information:</p>\r\n                    <hr>\r\n                    <div class=\"form-field\">\r\n                        <input class=\"form-control\" type=\"text\" name=\"address\" placeholder=\"Address..\">\r\n                    </div>\r\n                    <div class=\"form-field\">\r\n                        <input class=\"form-control\" type=\"text\" name=\"city\" placeholder=\"City..\">\r\n                    </div>\r\n                    <div class=\"form-field\">\r\n                        <input class=\"form-control\" type=\"text\" name=\"state\" placeholder=\"State..\">\r\n                    </div>\r\n                    <div class=\"form-field\">\r\n                        <input class=\"form-control\" type=\"text\" name=\"zipcode\" placeholder=\"Zip code..\">\r\n                    </div>\r\n                    <div class=\"form-field\">\r\n                        <input class=\"form-control\" type=\"text\" name=\"country\" placeholder=\"Zip code..\">\r\n                    </div>\r\n                </div>\r\n                <hr>\r\n                <input id=\"form-button\" class=\"btn btn-success btn-block\" type=\"submit\" value=\"Continue\">\r\n            </form>\r\n        </div>\r\n        <br>\r\n        <div class=\"box-element hidden\" id=\"payment-info\">\r\n            <small>Paypal Option</small>\r\n\r\n        </div>\r\n    </div>\r\n\r\n    <div class=\"col-lg-6\">\r\n        <div class=\"box-element\">\r\n            <a class=\"btn btn-outline-dark\" href=\"{% url 'cart'%}\">&#x2199;Back to Cart</a>\r\n            <hr>\r\n            <h3>Order Summary</h3>\r\n            <hr>\r\n            {% for item in items %}\r\n            <div class=\"cart-row\">\r\n                <div style=\"flex:2\"><img class=\"row-image\" src=\"{{ item.product.ImageURL }}\"></div>\r\n                <div style=\"flex:2\"><p>{{ item.product.name }}</p></div>\r\n                <div style=\"flex:1\"><p>{{ item.product.price }}</p></div>\r\n                <div style=\"flex:1\"><p>{{ item.quatity }}</p></div>\r\n            </div>\r\n            {% endfor %}\r\n            <h5>Items: {{ order.get_cart_items }}</h5>\r\n            <h5>Total: {{ order.get_cart_total|floatformat:2 }}</h5>\r\n\r\n        </div>\r\n\r\n    </div>\r\n\r\n</div>\r\n\r\n\r\n{% endblock content %}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- ecommerce/store/templates/store/checkout.html	(revision d631164d34ad7299a5896a5033ad86a6f822f480)
++++ ecommerce/store/templates/store/checkout.html	(date 1604068527844)
+@@ -1,50 +1,48 @@
+ {% extends 'store/main.html' %}
+-{% load static  %}
+-
++{% load static %}
+ {% block content %}
+-
+-
+-
+-<div class="row">
+-    <div class="col-lg-6">
+-        <div class="box-element" id="form-wrapper">
+-            <form id="form">
+-                <div id="user-info">
+-                    <div class="form-field">
+-                        <input required class="form-control" type="text" name="name" placeholder="Name..">
+-                    </div>
+-                    <div class="form-field">
+-                        <input required class="form-control" type="email" name="email" placeholder="Email..">
+-                    </div>
+-                </div>
+-
+-                <div id="shipping-info">
+-                    <hr>
+-                    <p>Shipping Information:</p>
+-                    <hr>
+-                    <div class="form-field">
+-                        <input class="form-control" type="text" name="address" placeholder="Address..">
+-                    </div>
+-                    <div class="form-field">
+-                        <input class="form-control" type="text" name="city" placeholder="City..">
+-                    </div>
+-                    <div class="form-field">
+-                        <input class="form-control" type="text" name="state" placeholder="State..">
+-                    </div>
+-                    <div class="form-field">
+-                        <input class="form-control" type="text" name="zipcode" placeholder="Zip code..">
+-                    </div>
+-                    <div class="form-field">
+-                        <input class="form-control" type="text" name="country" placeholder="Zip code..">
+-                    </div>
+-                </div>
+-                <hr>
+-                <input id="form-button" class="btn btn-success btn-block" type="submit" value="Continue">
+-            </form>
+-        </div>
++     <div class="row">
++		<div class="col-lg-6">
++			<div class="box-element" id="form-wrapper">
++				<form id="form">
++					<div id="user-info">
++						<div class="form-field">
++							<input required class="form-control" type="text" name="name" placeholder="Name..">
++						</div>
++						<div class="form-field">
++							<input required class="form-control" type="email" name="email" placeholder="Email..">
++						</div>
++					</div>
++					
++					<div id="shipping-info">
++						<hr>
++						<p>Shipping Information:</p>
++						<hr>
++						<div class="form-field">
++							<input class="form-control" type="text" name="address" placeholder="Address..">
++						</div>
++						<div class="form-field">
++							<input class="form-control" type="text" name="city" placeholder="City..">
++						</div>
++						<div class="form-field">
++							<input class="form-control" type="text" name="state" placeholder="State..">
++						</div>
++						<div class="form-field">
++							<input class="form-control" type="text" name="zipcode" placeholder="Zip code..">
++						</div>
++						<div class="form-field">
++							<input class="form-control" type="text" name="country" placeholder="Zip code..">
++						</div>
++					</div>
++
++					<hr>
++					<input id="form-button" class="btn btn-success btn-block" type="submit" value="Continue">
++				</form>
++			</div>
+         <br>
+         <div class="box-element hidden" id="payment-info">
+             <small>Paypal Option</small>
++            <button id="make-payment">Make Payment</button>
+ 
+         </div>
+     </div>
+@@ -64,7 +62,7 @@
+             </div>
+             {% endfor %}
+             <h5>Items: {{ order.get_cart_items }}</h5>
+-            <h5>Total: {{ order.get_cart_total|floatformat:2 }}</h5>
++            <h5>Total: ${{ order.get_cart_total|floatformat:2 }}</h5>
+ 
+         </div>
+ 
+@@ -72,5 +70,39 @@
+ 
+ </div>
+ 
++    <script type="text/javascript">
++        var shipping = '{{ order.shipping }}';
++
++        if (shipping == 'False'){
++            document.getElementById('shipping-info').innerHTML=''
++        }
++
++        if (user != 'AnonymousUser'){
++            document.getElementById('user-info').innerHTML =''
++        }
++
++        if (shipping == 'False' && user != 'AnonymousUser'){
++            //Hide entire form if user is logged in and shipping is false
++            document.getElementById('form-wrapper').classList.add("hidden");
++				//Show payment if logged in user wants to buy an item that does not require shipping
++            document.getElementById('payment-info').classList.remove("hidden");
++
++        }
+ 
++
++        var form = document.getElementById('form');
++
++        form.addEventListener('submit',function(e) {
++            e.preventDefault()
++            console.log('Form submitted...')
++            document.getElementById('form-button').classList.add('hidden')
++            document.getElementById('payment-info').classList.remove('hidden')
++        } )
++        {% comment %} document.getElementById('make-payment').addEventListener('click',function(){
++            submitFormData()
++        }) {% endcomment %}
++        function submitFormData(){
++            console.log('Payment button clicked')
++        }
++    </script>
+ {% endblock content %}
+\ No newline at end of file
+Index: ecommerce/static/js/cart.js
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>var updateBtns = document.getElementsByClassName('update-cart')\r\n\r\n\r\n\r\nfor(var i = 0;i < updateBtns.length; i++){\r\n    updateBtns[i].addEventListener('click',function () {\r\n        var productId = this.dataset.product\r\n        var action = this.dataset.action\r\n        console.log('productId:', productId, 'action:', action)\r\n        console.log('USER',user)\r\n        if (user=='AnonymousUser'){\r\n            console.log('Not logged in')\r\n        }else {\r\n            updateUserOrder(productId,action)\r\n        }\r\n    })\r\n}\r\n\r\nfunction updateUserOrder(productId, action) {\r\n    console.log('User is logged in , sending data...')\r\n    var url = '/update_item/'\r\n\r\n    fetch(url,{\r\n        method:'POST',\r\n        headers:{\r\n            'Content-Type':'application/json',\r\n            'X-CSRFToken' : csrftoken,\r\n        },\r\n        body:JSON.stringify({'productId':productId,'action':action})\r\n    })\r\n    .then((response) =>{\r\n        return response.json()\r\n    })\r\n    .then((data) =>{\r\n        console.log('data:',data)\r\n        location.reload()\r\n    })\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- ecommerce/static/js/cart.js	(revision d631164d34ad7299a5896a5033ad86a6f822f480)
++++ ecommerce/static/js/cart.js	(date 1604068538332)
+@@ -6,11 +6,11 @@
+     updateBtns[i].addEventListener('click',function () {
+         var productId = this.dataset.product
+         var action = this.dataset.action
+-        console.log('productId:', productId, 'action:', action)
+-        console.log('USER',user)
+-        if (user=='AnonymousUser'){
++        console.log('productId:', productId, 'Action:', action)
++        console.log('USER:',user)
++        if (user == 'AnonymousUser'){
+             console.log('Not logged in')
+-        }else {
++        }else{
+             updateUserOrder(productId,action)
+         }
+     })
+@@ -29,10 +29,10 @@
+         body:JSON.stringify({'productId':productId,'action':action})
+     })
+     .then((response) =>{
+-        return response.json()
++        return response.json();
+     })
+     .then((data) =>{
+         console.log('data:',data)
+         location.reload()
+-    })
++    });
+ }
+\ No newline at end of file
+Index: ecommerce/store/views.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>from django.shortcuts import render\r\nfrom .models import *\r\nfrom django.http import JsonResponse\r\nimport json\r\n# Create your views here.\r\ndef store(request):\r\n\r\n    if request.user.is_authenticated:\r\n        customer = request.user.customer\r\n        order, created = Order.objects.get_or_create(customer=customer, complete=False)\r\n        items = order.orderitem_set.all()\r\n        cartItems = order.get_cart_items\r\n    else:\r\n        items =[]\r\n        order = {'get_cart_total':0, 'get_cart_items':0, 'shipping':False}\r\n        cartItems = order['get_cart_items']\r\n    products = Product.objects.all()\r\n    context = {'products':products, 'cartItems':cartItems}\r\n    return render(request, 'store/store.html',context)\r\n\r\n\r\n\r\ndef cart(request):\r\n    if request.user.is_authenticated:\r\n        customer = request.user.customer\r\n        order, created = Order.objects.get_or_create(customer=customer, complete=False)\r\n        items = order.orderitem_set.all()\r\n        cartItems = order.get_cart_items\r\n    else:\r\n        items =[]\r\n        order = {'get_cart_total':0, 'get_cart_items':0, 'shipping':False}\r\n        cartItems = order['get_cart_items']\r\n    context = {'items':items, 'order':order,'cartItems':cartItems }\r\n\r\n    return render(request, 'store/cart.html',context)\r\n\r\n\r\n\r\ndef checkout(request):\r\n    if request.user.is_authenticated:\r\n        customer = request.user.customer\r\n        order, created = Order.objects.get_or_create(customer=customer, complete=False)\r\n        items = order.orderitem_set.all()\r\n        cartItems = order.get_cart_items\r\n    else:\r\n        items =[]\r\n        order = {'get_cart_total':0, 'get_cart_items':0}\r\n        cartItems = order['get_cart_items']\r\n    context = {'items': items, 'order': order, 'cartItems':cartItems}\r\n    return render(request, 'store/checkout.html',context)\r\n\r\n\r\ndef updateItem(request):\r\n    data = json.loads(request.body)\r\n    productId = data['productId']\r\n    action = data['action']\r\n    print('Action:', action)\r\n    print('productId:', productId)\r\n    customer = request.user.customer\r\n    product = Product.objects.get(id=productId)\r\n    order, created = Order.objects.get_or_create(customer=customer, complete=False)\r\n    orderItem ,created = OrderItem.objects.get_or_create(order=order, product = product)\r\n    if action == 'add':\r\n        orderItem.quantity = (orderItem.quantity + 1)\r\n    elif action =='remove':\r\n        orderItem.quantity = (orderItem.quantity - 1)\r\n    orderItem.save()\r\n    if orderItem.quantity <= 0:\r\n        orderItem.delete()\r\n    return JsonResponse('Item was added',safe=False)
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- ecommerce/store/views.py	(revision d631164d34ad7299a5896a5033ad86a6f822f480)
++++ ecommerce/store/views.py	(date 1604068540845)
+@@ -2,24 +2,24 @@
+ from .models import *
+ from django.http import JsonResponse
+ import json
++
++
+ # Create your views here.
+ def store(request):
+-
+     if request.user.is_authenticated:
+         customer = request.user.customer
+         order, created = Order.objects.get_or_create(customer=customer, complete=False)
+         items = order.orderitem_set.all()
+         cartItems = order.get_cart_items
+     else:
+-        items =[]
+-        order = {'get_cart_total':0, 'get_cart_items':0, 'shipping':False}
++        items = []
++        order = {'get_cart_total': 0, 'get_cart_items': 0, 'shipping': False}
+         cartItems = order['get_cart_items']
+     products = Product.objects.all()
+-    context = {'products':products, 'cartItems':cartItems}
+-    return render(request, 'store/store.html',context)
++    context = {'products': products, 'cartItems': cartItems}
++    return render(request, 'store/store.html', context)
+ 
+ 
+-
+ def cart(request):
+     if request.user.is_authenticated:
+         customer = request.user.customer
+@@ -27,15 +27,14 @@
+         items = order.orderitem_set.all()
+         cartItems = order.get_cart_items
+     else:
+-        items =[]
+-        order = {'get_cart_total':0, 'get_cart_items':0, 'shipping':False}
++        items = []
++        order = {'get_cart_total': 0, 'get_cart_items': 0}
+         cartItems = order['get_cart_items']
+-    context = {'items':items, 'order':order,'cartItems':cartItems }
++    context = {'items': items, 'order': order, 'cartItems': cartItems,'shipping': False}
+ 
+-    return render(request, 'store/cart.html',context)
++    return render(request, 'store/cart.html', context)
+ 
+ 
+-
+ def checkout(request):
+     if request.user.is_authenticated:
+         customer = request.user.customer
+@@ -43,11 +42,11 @@
+         items = order.orderitem_set.all()
+         cartItems = order.get_cart_items
+     else:
+-        items =[]
+-        order = {'get_cart_total':0, 'get_cart_items':0}
++        items = []
++        order = {'get_cart_total': 0, 'get_cart_items': 0}
+         cartItems = order['get_cart_items']
+-    context = {'items': items, 'order': order, 'cartItems':cartItems}
+-    return render(request, 'store/checkout.html',context)
++    context = {'items': items, 'order': order, 'cartItems': cartItems, 'shipping': False}
++    return render(request, 'store/checkout.html', context)
+ 
+ 
+ def updateItem(request):
+@@ -59,12 +58,12 @@
+     customer = request.user.customer
+     product = Product.objects.get(id=productId)
+     order, created = Order.objects.get_or_create(customer=customer, complete=False)
+-    orderItem ,created = OrderItem.objects.get_or_create(order=order, product = product)
++    orderItem, created = OrderItem.objects.get_or_create(order=order, product=product)
+     if action == 'add':
+         orderItem.quantity = (orderItem.quantity + 1)
+-    elif action =='remove':
++    elif action == 'remove':
+         orderItem.quantity = (orderItem.quantity - 1)
+     orderItem.save()
+     if orderItem.quantity <= 0:
+         orderItem.delete()
+-    return JsonResponse('Item was added',safe=False)
+\ No newline at end of file
++    return JsonResponse('Item was added', safe=False)
+Index: ecommerce/store/models.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>from django.db import models\r\nfrom django.contrib.auth.models import User\r\n\r\n# Create your models here.\r\n\r\nclass Customer(models.Model):\r\n    user = models.OneToOneField(User,null=True, blank=True, on_delete=models.CASCADE)\r\n    name = models.CharField(max_length=200,null=True)\r\n    email = models.CharField(max_length=200, null=True)\r\n\r\n    def __str__(self):\r\n        return self.name\r\n\r\nclass Product(models.Model):\r\n    name = models.CharField(max_length=200, null=True)\r\n    price = models.FloatField()\r\n    digital = models.BooleanField(default=False, null=True, blank=False)\r\n    #image\r\n    image = models.ImageField(null=True, blank=True)\r\n    def __str__(self):\r\n        return self.name\r\n\r\n    @property\r\n    def ImageURL(self):\r\n        try:\r\n            url = self.image.url\r\n        except:\r\n            url = ''\r\n        return url\r\n\r\n\r\n\r\n\r\nclass Order(models.Model):\r\n    customer = models.ForeignKey(Customer,on_delete=models.SET_NULL,blank=True,null=True)\r\n    date_orderd = models.DateTimeField(auto_now_add=True)\r\n    complete = models.BooleanField(default=False,null=True)\r\n    transaction_id = models.CharField(max_length=200,null=True)\r\n\r\n    def __str__(self):\r\n        return str(self.id)\r\n\r\n    @property\r\n    def shipping(self):\r\n        shipping = False\r\n        orderitems = self.orderitem_set.all()\r\n        for i in orderitems:\r\n            if i.product.digital ==False:\r\n                shipping ==True\r\n        return shipping\r\n\r\n\r\n    @property\r\n    def get_cart_total(self):\r\n        orderitems = self.orderitem_set.all()\r\n        total = sum([item.get_total for item in orderitems])\r\n        return total\r\n    @property\r\n    def get_cart_items(self):\r\n        orderitems = self.orderitem_set.all()\r\n        total = sum([item.quantity for item in orderitems])\r\n        return total\r\n\r\nclass OrderItem(models.Model):\r\n    product = models.ForeignKey(Product, on_delete=models.SET_NULL, blank=True, null=True)\r\n    order = models.ForeignKey(Order, on_delete=models.SET_NULL, blank=True, null=True)\r\n    quantity = models.IntegerField(default=0, null=True, blank=True)\r\n    date_added = models.DateTimeField(auto_now_add=True)\r\n\r\n    @property\r\n    def get_total(self):\r\n        total = self.product.price * self.quantity\r\n        return total\r\n\r\n\r\nclass ShippingAdress(models.Model):\r\n    customer = models.ForeignKey(Customer, on_delete=models.SET_NULL, blank=True, null=True)\r\n    order = models.ForeignKey(Order, on_delete=models.SET_NULL, blank=True, null=True)\r\n    adress = models.CharField(max_length=200, null=True)\r\n    city = models.CharField(max_length=200, null=True)\r\n    state = models.CharField(max_length=200, null=True)\r\n    zipcode = models.CharField(max_length=200, null=True)\r\n    date_added = models.DateTimeField(auto_now_add=True)\r\n\r\n    def __str__(self):\r\n        return self.adress
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- ecommerce/store/models.py	(revision d631164d34ad7299a5896a5033ad86a6f822f480)
++++ ecommerce/store/models.py	(date 1604068544057)
+@@ -1,12 +1,13 @@
+ from django.db import models
+ from django.contrib.auth.models import User
++from django.utils import timezone
+ 
+ # Create your models here.
+ 
+ class Customer(models.Model):
+     user = models.OneToOneField(User,null=True, blank=True, on_delete=models.CASCADE)
+     name = models.CharField(max_length=200,null=True)
+-    email = models.CharField(max_length=200, null=True)
++    email = models.CharField(max_length=200)
+ 
+     def __str__(self):
+         return self.name
+@@ -14,7 +15,7 @@
+ class Product(models.Model):
+     name = models.CharField(max_length=200, null=True)
+     price = models.FloatField()
+-    digital = models.BooleanField(default=False, null=True, blank=False)
++    digital = models.BooleanField(default=False, null=True, blank=True)
+     #image
+     image = models.ImageField(null=True, blank=True)
+     def __str__(self):
+@@ -34,7 +35,7 @@
+ class Order(models.Model):
+     customer = models.ForeignKey(Customer,on_delete=models.SET_NULL,blank=True,null=True)
+     date_orderd = models.DateTimeField(auto_now_add=True)
+-    complete = models.BooleanField(default=False,null=True)
++    complete = models.BooleanField(default=False)
+     transaction_id = models.CharField(max_length=200,null=True)
+ 
+     def __str__(self):
+@@ -45,8 +46,8 @@
+         shipping = False
+         orderitems = self.orderitem_set.all()
+         for i in orderitems:
+-            if i.product.digital ==False:
+-                shipping ==True
++            if i.product.digital == False:
++                shipping =True
+         return shipping
+ 
+ 
+@@ -62,8 +63,8 @@
+         return total
+ 
+ class OrderItem(models.Model):
+-    product = models.ForeignKey(Product, on_delete=models.SET_NULL, blank=True, null=True)
+-    order = models.ForeignKey(Order, on_delete=models.SET_NULL, blank=True, null=True)
++    product = models.ForeignKey(Product, on_delete=models.SET_NULL, null=True)
++    order = models.ForeignKey(Order, on_delete=models.SET_NULL, null=True)
+     quantity = models.IntegerField(default=0, null=True, blank=True)
+     date_added = models.DateTimeField(auto_now_add=True)
+ 
+@@ -74,12 +75,12 @@
+ 
+ 
+ class ShippingAdress(models.Model):
+-    customer = models.ForeignKey(Customer, on_delete=models.SET_NULL, blank=True, null=True)
+-    order = models.ForeignKey(Order, on_delete=models.SET_NULL, blank=True, null=True)
+-    adress = models.CharField(max_length=200, null=True)
+-    city = models.CharField(max_length=200, null=True)
+-    state = models.CharField(max_length=200, null=True)
+-    zipcode = models.CharField(max_length=200, null=True)
++    customer = models.ForeignKey(Customer, on_delete=models.SET_NULL, null=True)
++    order = models.ForeignKey(Order, on_delete=models.SET_NULL, null=True)
++    adress = models.CharField(max_length=200, null=False)
++    city = models.CharField(max_length=200, null=False)
++    state = models.CharField(max_length=200, null=False)
++    zipcode = models.CharField(max_length=200, null=False)
+     date_added = models.DateTimeField(auto_now_add=True)
+ 
+     def __str__(self):
+Index: ecommerce/store/templates/store/main.html
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>{% load static %}\r\n<!DOCTYPE html>\r\n<html lang=\"en\">\r\n<head>\r\n    <meta charset=\"UTF-8\">\r\n    <title>STORE</title>\r\n    <link rel=\"stylesheet\" href=\"https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css\" integrity=\"sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z\" crossorigin=\"anonymous\">\r\n\r\n    <link rel=\"stylesheet\" type=\"text/css\" href=\"{% static 'css/main.css' %}\">\r\n\r\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1\">\r\n\r\n    <script type=\"text/javascript\">\r\n        var user = '{{request.user}}'\r\n        function getToken(name) {\r\n          let cookieValue = null;\r\n          if (document.cookie && document.cookie !== '') {\r\n              const cookies = document.cookie.split(';');\r\n              for (let i = 0; i < cookies.length; i++) {\r\n                  const cookie = cookies[i].trim();\r\n                  // Does this cookie string begin with the name we want?\r\n                  if (cookie.substring(0, name.length + 1) === (name + '=')) {\r\n                      cookieValue = decodeURIComponent(cookie.substring(name.length + 1));\r\n                      break;\r\n                  }\r\n              }\r\n          }\r\n          return cookieValue;\r\n      }\r\n    const csrftoken = getToken('csrftoken');\r\n    </script>\r\n\r\n\r\n</head>\r\n<body>\r\n<!--Navbar-->\r\n    <nav class=\"navbar navbar-expand-lg navbar-dark bg-dark\">\r\n  <a class=\"navbar-brand\" href=\"{% url 'store' %}\">Ecom</a>\r\n  <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarSupportedContent\" aria-controls=\"navbarSupportedContent\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\r\n    <span class=\"navbar-toggler-icon\"></span>\r\n  </button>\r\n\r\n  <div class=\"collapse navbar-collapse\" id=\"navbarSupportedContent\">\r\n    <ul class=\"navbar-nav mr-auto\">\r\n      <li class=\"nav-item active\">\r\n        <a class=\"nav-link\" href=\"{% url 'store' %}\">Store <span class=\"sr-only\">(current)</span></a>\r\n      </li>\r\n    </ul>\r\n      <div class=\"form-inline my-2 my-lg-0\">\r\n\t     \t<a href=\"#\"class=\"btn btn-warning\">Login</a>\r\n\r\n\t     \t<a href=\"{% url 'cart' %}\">\r\n\t    \t\t<img  id=\"cart-icon\" src=\"{% static 'images/cart.png' %}\">\r\n\t    \t</a>\r\n\t    \t<p id=\"cart-total\">{{ cartItems }}</p>\r\n\r\n      </div>\r\n  </div>\r\n</nav>\r\n    <div class=\"container\">\r\n        {% block content%}\r\n        {% endblock%}\r\n\r\n    </div>\r\n\r\n\r\n\r\n\r\n<script src=\"https://code.jquery.com/jquery-3.5.1.slim.min.js\" integrity=\"sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj\" crossorigin=\"anonymous\"></script>\r\n<script src=\"https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js\" integrity=\"sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN\" crossorigin=\"anonymous\"></script>\r\n<script src=\"https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js\" integrity=\"sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV\" crossorigin=\"anonymous\"></script>\r\n\r\n\r\n<script type=\"text/javascript\" src=\"{% static 'js/cart.js' %}\"></script>\r\n\r\n</body>\r\n</html>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- ecommerce/store/templates/store/main.html	(revision d631164d34ad7299a5896a5033ad86a6f822f480)
++++ ecommerce/store/templates/store/main.html	(date 1604068544112)
+@@ -4,29 +4,29 @@
+ <head>
+     <meta charset="UTF-8">
+     <title>STORE</title>
+-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
++    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1" />
++
++	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+ 
+-    <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
++	<link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+ 
+-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1">
+-
+     <script type="text/javascript">
+         var user = '{{request.user}}'
+         function getToken(name) {
+-          let cookieValue = null;
+-          if (document.cookie && document.cookie !== '') {
+-              const cookies = document.cookie.split(';');
+-              for (let i = 0; i < cookies.length; i++) {
+-                  const cookie = cookies[i].trim();
+-                  // Does this cookie string begin with the name we want?
+-                  if (cookie.substring(0, name.length + 1) === (name + '=')) {
+-                      cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+-                      break;
+-                  }
+-              }
+-          }
+-          return cookieValue;
+-      }
++		    var cookieValue = null;
++		    if (document.cookie && document.cookie !== '') {
++		        var cookies = document.cookie.split(';');
++		        for (var i = 0; i < cookies.length; i++) {
++		            var cookie = cookies[i].trim();
++		            // Does this cookie string begin with the name we want?
++		            if (cookie.substring(0, name.length + 1) === (name + '=')) {
++		                cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
++		                break;
++		            }
++		        }
++		    }
++		    return cookieValue;
++		}
+     const csrftoken = getToken('csrftoken');
+     </script>
+ 
+@@ -59,7 +59,7 @@
+ </nav>
+     <div class="container">
+         {% block content%}
+-        {% endblock%}
++        {% endblock content%}
+ 
+     </div>
+ 
+Index: ecommerce/store/admin.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>from django.contrib import admin\r\nfrom .models import *\r\n# Register your models here.\r\n\r\nadmin.site.register(Customer)\r\nadmin.site.register(Product)\r\nadmin.site.register(Order)\r\nadmin.site.register(OrderItem)\r\nadmin.site.register(ShippingAdress)
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- ecommerce/store/admin.py	(revision d631164d34ad7299a5896a5033ad86a6f822f480)
++++ ecommerce/store/admin.py	(date 1604068544135)
+@@ -6,4 +6,4 @@
+ admin.site.register(Product)
+ admin.site.register(Order)
+ admin.site.register(OrderItem)
+-admin.site.register(ShippingAdress)
+\ No newline at end of file
++admin.site.register(ShippingAddress)
+\ No newline at end of file
+Index: ecommerce/static/css/main.css
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>body{\r\n\tbackground-color: hsl(0, 0%, 98%);\r\n}\r\n\r\nh1,h2,h3,h4,h5,h6{\r\n\tcolor:hsl(0, 0%, 30%);\r\n}\r\n\r\n.box-element{\r\n\tbox-shadow:hsl(0, 0%, 80%) 0 0 16px;\r\n\tbackground-color: #fff;\r\n\tborder-radius: 4px;\r\n\tpadding: 10px;\r\n}\r\n\r\n.thumbnail{\r\n\twidth: 100%;\r\n\theight: 200px;\r\n\t-webkit-box-shadow: -1px -3px 5px -2px rgba(214,214,214,1);\r\n    -moz-box-shadow: -1px -3px 5px -2px rgba(214,214,214,1);\r\n    box-shadow: -1px -3px 5px -2px rgba(214,214,214,1);\r\n}\r\n\r\n.product{\r\n\tborder-radius: 0 0 4px 4px;\r\n}\r\n\r\n.bg-dark{\r\n\tbackground-color: #4f868c!important;\r\n}\r\n\r\n#cart-icon{\r\n\twidth:25px;\r\n\tdisplay: inline-block;\r\n\tmargin-left: 15px;\r\n}\r\n\r\n#cart-total{\r\n\tdisplay: block;\r\n\ttext-align: center;\r\n\tcolor:#fff;\r\n\tbackground-color: red;\r\n\twidth: 20px;\r\n\theight: 25px;\r\n\tborder-radius: 50%;\r\n\tfont-size: 14px;\r\n}\r\n\r\n.col-lg-4, .col-lg-6, .col-lg-8, .col-lg-12{\r\n\tmargin-top: 10px;\r\n}\r\n\r\n.btn{\r\n\tborder-radius: 0;\r\n}\r\n\r\n.row-image{\r\n\twidth: 100px;\r\n}\r\n\r\n.form-field{\r\n\twidth:250px;\r\n\tdisplay: inline-block;\r\n\tpadding: 5px;\r\n}\r\n\r\n.cart-row{\r\n\tdisplay: flex;\r\n    align-items: flex-stretch;\r\n    padding-bottom: 10px;\r\n    margin-bottom: 10px;\r\n    border-bottom: 1px solid #ececec;\r\n\r\n}\r\n\r\n.quantity{\r\n\tdisplay: inline-block;\r\n\tfont-weight: 700;\r\n\tpadding-right:10px;\r\n\r\n\r\n}\r\n\r\n.chg-quantity{\r\n\twidth: 12px;\r\n\tcursor: pointer;\r\n\tdisplay: block;\r\n\tmargin-top: 5px;\r\n\ttransition:.1s;\r\n}\r\n\r\n.chg-quantity:hover{\r\n\topacity: .6;\r\n}\r\n\r\n\r\n.hidden{\r\n\tdisplay: none!important;\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- ecommerce/static/css/main.css	(revision d631164d34ad7299a5896a5033ad86a6f822f480)
++++ ecommerce/static/css/main.css	(date 1604068544146)
+@@ -66,7 +66,7 @@
+ 
+ .cart-row{
+ 	display: flex;
+-    align-items: flex-stretch;
++    align-items: stretch;
+     padding-bottom: 10px;
+     margin-bottom: 10px;
+     border-bottom: 1px solid #ececec;
+Index: ecommerce/store/templates/store/cart.html
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>{% extends 'store/main.html' %}\r\n{% load static  %}\r\n\r\n{% block content %}\r\n    <div class=\"row\">\r\n        <div class=\"col-lg-12\">\r\n            <div class=\"box-element\">\r\n                <a class=\"btn btn-outline-dark\" href=\"{% url 'store'%}\">&#x2190; Continue shopping</a>\r\n                <br>\r\n                <br>\r\n                <table class=\"table\">\r\n                    <tr>\r\n                        <th><h5>Items: <strong>{{ order.get_cart_items }}</strong></h5></th>\r\n                        <th><h5>Total: <strong>{{ order.get_cart_total|floatformat:2 }}</strong></h5></th>\r\n                        <th>\r\n                            <a style=\"float:right; margin:5px\" class=\"btn btn-success\" href=\"{% url 'checkout' %}\">Check out</a>\r\n                        </th>\r\n                    </tr>\r\n                </table>\r\n            </div>\r\n            <br>\r\n            <div class=\"box-element\">\r\n                <div  class=\"cart-row\">\r\n                    <div style=\"flex: 2\"></div>\r\n                    <div style=\"flex: 2\"><strong>Item</strong></div>\r\n                    <div style=\"flex: 1\"><strong>Price</strong></div>\r\n                    <div style=\"flex: 1\"><strong>Quantity</strong></div>\r\n                    <div style=\"flex: 1\"><strong>Total</strong></div>\r\n                </div>\r\n                {% for item in items %}\r\n                <div  class=\"cart-row\">\r\n                    <div style=\"flex: 2\"><img class=\"row-image\" src=\"{{ item.product.ImageURL }}\"></div>\r\n                    <div style=\"flex: 2\">{{item.product.name }}</div>\r\n                    <div style=\"flex: 1\">{{item.product.price|floatformat:2 }}</div>\r\n                    <div style=\"flex: 1\">\r\n                        <p class=\"quantity\">{{item.quantity}}</p>\r\n                        <div class=\"quantity\">\r\n                            <img data-product ={{ item.product.id }} data-action ='add' class=\"chg-quantity update-cart\" src=\"{% static 'images/arrow-up.png'%}\">\r\n                            <img data-product ={{ item.product.id }} data-action ='remove' class=\"chg-quantity update-cart\" src=\"{% static 'images/arrow-down.png'%}\">\r\n                        </div>\r\n                    </div>\r\n                    <div style=\"flex: 1\">{{item.get_total}}</div>\r\n                </div>\r\n                {% endfor %}\r\n\r\n            </div>\r\n        </div>\r\n\r\n    </div>\r\n\r\n\r\n\r\n{% endblock content %}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- ecommerce/store/templates/store/cart.html	(revision d631164d34ad7299a5896a5033ad86a6f822f480)
++++ ecommerce/store/templates/store/cart.html	(date 1604068544162)
+@@ -11,9 +11,9 @@
+                 <table class="table">
+                     <tr>
+                         <th><h5>Items: <strong>{{ order.get_cart_items }}</strong></h5></th>
+-                        <th><h5>Total: <strong>{{ order.get_cart_total|floatformat:2 }}</strong></h5></th>
++                        <th><h5>Total: <strong>{{order.get_cart_total|floatformat:2}}</strong></h5></th>
+                         <th>
+-                            <a style="float:right; margin:5px" class="btn btn-success" href="{% url 'checkout' %}">Check out</a>
++                            <a style="float:right; margin:5px;" class="btn btn-success" href="{% url 'checkout' %}">Check out</a>
+                         </th>
+                     </tr>
+                 </table>
+@@ -31,7 +31,7 @@
+                 <div  class="cart-row">
+                     <div style="flex: 2"><img class="row-image" src="{{ item.product.ImageURL }}"></div>
+                     <div style="flex: 2">{{item.product.name }}</div>
+-                    <div style="flex: 1">{{item.product.price|floatformat:2 }}</div>
++                    <div style="flex: 1">{{item.product.price|floatformat:2}}</div>
+                     <div style="flex: 1">
+                         <p class="quantity">{{item.quantity}}</p>
+                         <div class="quantity">
+Index: ecommerce/store/migrations/0002_product_image.py
+===================================================================
+--- ecommerce/store/migrations/0002_product_image.py	(revision d631164d34ad7299a5896a5033ad86a6f822f480)
++++ ecommerce/store/migrations/0002_product_image.py	(revision d631164d34ad7299a5896a5033ad86a6f822f480)
+@@ -1,18 +0,0 @@
+-# Generated by Django 3.1.1 on 2020-10-11 15:14
+-
+-from django.db import migrations, models
+-
+-
+-class Migration(migrations.Migration):
+-
+-    dependencies = [
+-        ('store', '0001_initial'),
+-    ]
+-
+-    operations = [
+-        migrations.AddField(
+-            model_name='product',
+-            name='image',
+-            field=models.ImageField(blank=True, null=True, upload_to=''),
+-        ),
+-    ]
+Index: .idea/dataSources.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- .idea/dataSources.xml	(date 1604068544187)
++++ .idea/dataSources.xml	(date 1604068544187)
+@@ -0,0 +1,11 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
++    <data-source source="LOCAL" name="db" uuid="b922f783-87e8-46fc-8056-bedd09bebb1d">
++      <driver-ref>sqlite.xerial</driver-ref>
++      <synchronize>true</synchronize>
++      <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
++      <jdbc-url>jdbc:sqlite:C:\Users\HUST-1670\Desktop\ecommerce\ecommerce\db.sqlite3</jdbc-url>
++    </data-source>
++  </component>
++</project>
+\ No newline at end of file
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"BranchesTreeState\">\r\n    <expand>\r\n      <path>\r\n        <item name=\"ROOT\" type=\"e8cecc67:BranchNodeDescriptor\" />\r\n        <item name=\"LOCAL_ROOT\" type=\"e8cecc67:BranchNodeDescriptor\" />\r\n      </path>\r\n      <path>\r\n        <item name=\"ROOT\" type=\"e8cecc67:BranchNodeDescriptor\" />\r\n        <item name=\"REMOTE_ROOT\" type=\"e8cecc67:BranchNodeDescriptor\" />\r\n      </path>\r\n      <path>\r\n        <item name=\"ROOT\" type=\"e8cecc67:BranchNodeDescriptor\" />\r\n        <item name=\"REMOTE_ROOT\" type=\"e8cecc67:BranchNodeDescriptor\" />\r\n        <item name=\"GROUP_NODE:origin\" type=\"e8cecc67:BranchNodeDescriptor\" />\r\n      </path>\r\n    </expand>\r\n    <select />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"98318bd0-ae6e-4560-ac26-86feacdd3bed\" name=\"Default Changelist\" comment=\"\">\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/ecommerce.iml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/ecommerce.iml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/misc.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/misc.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/ecommerce/static/js/cart.js\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/ecommerce/static/js/cart.js\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/ecommerce/store/views.py\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/ecommerce/store/views.py\" afterDir=\"false\" />\r\n    </list>\r\n    <ignored path=\"$PROJECT_DIR$/venv/\" />\r\n    <option name=\"EXCLUDED_CONVERTED_TO_IGNORED\" value=\"true\" />\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"FileEditorManager\">\r\n    <splitter split-orientation=\"horizontal\" split-proportion=\"0.5\">\r\n      <split-first>\r\n        <leaf SIDE_TABS_SIZE_LIMIT_KEY=\"375\">\r\n          <file pinned=\"false\" current-in-tab=\"false\">\r\n            <entry file=\"file://$PROJECT_DIR$/ecommerce/store/templates/store/main.html\">\r\n              <provider selected=\"true\" editor-type-id=\"text-editor\">\r\n                <state relative-caret-position=\"1080\">\r\n                  <caret line=\"60\" column=\"7\" selection-start-line=\"60\" selection-start-column=\"7\" selection-end-line=\"60\" selection-end-column=\"7\" />\r\n                </state>\r\n              </provider>\r\n            </entry>\r\n          </file>\r\n          <file pinned=\"false\" current-in-tab=\"true\">\r\n            <entry file=\"file://$PROJECT_DIR$/ecommerce/store/models.py\">\r\n              <provider selected=\"true\" editor-type-id=\"text-editor\">\r\n                <state relative-caret-position=\"518\">\r\n                  <caret line=\"75\" column=\"26\" selection-start-line=\"75\" selection-start-column=\"26\" selection-end-line=\"75\" selection-end-column=\"26\" />\r\n                  <folding>\r\n                    <element signature=\"e#0#28#0\" expanded=\"true\" />\r\n                  </folding>\r\n                </state>\r\n              </provider>\r\n            </entry>\r\n          </file>\r\n          <file pinned=\"false\" current-in-tab=\"false\">\r\n            <entry file=\"file://$PROJECT_DIR$/ecommerce/store/views.py\">\r\n              <provider selected=\"true\" editor-type-id=\"text-editor\">\r\n                <state relative-caret-position=\"720\">\r\n                  <caret line=\"42\" column=\"27\" selection-start-line=\"42\" selection-start-column=\"27\" selection-end-line=\"42\" selection-end-column=\"27\" />\r\n                  <folding>\r\n                    <element signature=\"e#0#35#0\" expanded=\"true\" />\r\n                  </folding>\r\n                </state>\r\n              </provider>\r\n            </entry>\r\n          </file>\r\n          <file pinned=\"false\" current-in-tab=\"false\">\r\n            <entry file=\"file://$PROJECT_DIR$/ecommerce/store/templates/store/checkout.html\">\r\n              <provider selected=\"true\" editor-type-id=\"text-editor\">\r\n                <state relative-caret-position=\"1170\">\r\n                  <caret line=\"65\" column=\"49\" selection-start-line=\"65\" selection-start-column=\"23\" selection-end-line=\"65\" selection-end-column=\"49\" />\r\n                </state>\r\n              </provider>\r\n            </entry>\r\n          </file>\r\n          <file pinned=\"false\" current-in-tab=\"false\">\r\n            <entry file=\"file://$PROJECT_DIR$/ecommerce/store/urls.py\">\r\n              <provider selected=\"true\" editor-type-id=\"text-editor\">\r\n                <state relative-caret-position=\"180\">\r\n                  <caret line=\"11\" column=\"1\" selection-start-line=\"11\" selection-start-column=\"1\" selection-end-line=\"11\" selection-end-column=\"1\" />\r\n                  <folding>\r\n                    <element signature=\"e#0#28#0\" expanded=\"true\" />\r\n                  </folding>\r\n                </state>\r\n              </provider>\r\n            </entry>\r\n          </file>\r\n        </leaf>\r\n      </split-first>\r\n      <split-second>\r\n        <leaf SIDE_TABS_SIZE_LIMIT_KEY=\"375\">\r\n          <file pinned=\"false\" current-in-tab=\"true\">\r\n            <entry file=\"file://$PROJECT_DIR$/ecommerce/static/js/cart.js\">\r\n              <provider selected=\"true\" editor-type-id=\"text-editor\">\r\n                <state relative-caret-position=\"338\">\r\n                  <caret line=\"26\" column=\"38\" selection-start-line=\"26\" selection-start-column=\"38\" selection-end-line=\"26\" selection-end-column=\"38\" />\r\n                </state>\r\n              </provider>\r\n            </entry>\r\n          </file>\r\n        </leaf>\r\n      </split-second>\r\n    </splitter>\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"HTML File\" />\r\n        <option value=\"Python Script\" />\r\n        <option value=\"CSS File\" />\r\n        <option value=\"JavaScript File\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"IdeDocumentHistory\">\r\n    <option name=\"CHANGED_PATHS\">\r\n      <list>\r\n        <option value=\"$PROJECT_DIR$/ecommerce/static/js/cảt.js\" />\r\n        <option value=\"$PROJECT_DIR$/ecommerce/store/templates/store/store.html\" />\r\n        <option value=\"$PROJECT_DIR$/ecommerce/store/templates/store/main.html\" />\r\n        <option value=\"$PROJECT_DIR$/ecommerce/store/urls.py\" />\r\n        <option value=\"$PROJECT_DIR$/ecommerce/store/views.py\" />\r\n        <option value=\"$PROJECT_DIR$/ecommerce/static/js/cart.js\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"JupyterTrust\" id=\"1c0d7b27-b905-4da5-9fda-301513fcf84b\" />\r\n  <component name=\"ProjectFrameBounds\" extendedState=\"7\">\r\n    <option name=\"x\" value=\"1572\" />\r\n    <option name=\"y\" value=\"92\" />\r\n    <option name=\"width\" value=\"1936\" />\r\n    <option name=\"height\" value=\"1056\" />\r\n  </component>\r\n  <component name=\"ProjectId\" id=\"1ih6dLCetFCsjnUizVODlBQRFUc\" />\r\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\" />\r\n  <component name=\"ProjectView\">\r\n    <navigator proportions=\"\" version=\"1\">\r\n      <foldersAlwaysOnTop value=\"true\" />\r\n    </navigator>\r\n    <panes>\r\n      <pane id=\"Scope\" />\r\n      <pane id=\"ProjectPane\">\r\n        <subPane>\r\n          <expand>\r\n            <path>\r\n              <item name=\"ecommerce\" type=\"b2602c69:ProjectViewProjectNode\" />\r\n              <item name=\"ecommerce\" type=\"462c0819:PsiDirectoryNode\" />\r\n            </path>\r\n            <path>\r\n              <item name=\"ecommerce\" type=\"b2602c69:ProjectViewProjectNode\" />\r\n              <item name=\"ecommerce\" type=\"462c0819:PsiDirectoryNode\" />\r\n              <item name=\"ecommerce\" type=\"462c0819:PsiDirectoryNode\" />\r\n            </path>\r\n            <path>\r\n              <item name=\"ecommerce\" type=\"b2602c69:ProjectViewProjectNode\" />\r\n              <item name=\"ecommerce\" type=\"462c0819:PsiDirectoryNode\" />\r\n              <item name=\"ecommerce\" type=\"462c0819:PsiDirectoryNode\" />\r\n              <item name=\"static\" type=\"462c0819:PsiDirectoryNode\" />\r\n            </path>\r\n            <path>\r\n              <item name=\"ecommerce\" type=\"b2602c69:ProjectViewProjectNode\" />\r\n              <item name=\"ecommerce\" type=\"462c0819:PsiDirectoryNode\" />\r\n              <item name=\"ecommerce\" type=\"462c0819:PsiDirectoryNode\" />\r\n              <item name=\"static\" type=\"462c0819:PsiDirectoryNode\" />\r\n              <item name=\"css\" type=\"462c0819:PsiDirectoryNode\" />\r\n            </path>\r\n            <path>\r\n              <item name=\"ecommerce\" type=\"b2602c69:ProjectViewProjectNode\" />\r\n              <item name=\"ecommerce\" type=\"462c0819:PsiDirectoryNode\" />\r\n              <item name=\"ecommerce\" type=\"462c0819:PsiDirectoryNode\" />\r\n              <item name=\"static\" type=\"462c0819:PsiDirectoryNode\" />\r\n              <item name=\"js\" type=\"462c0819:PsiDirectoryNode\" />\r\n            </path>\r\n            <path>\r\n              <item name=\"ecommerce\" type=\"b2602c69:ProjectViewProjectNode\" />\r\n              <item name=\"ecommerce\" type=\"462c0819:PsiDirectoryNode\" />\r\n              <item name=\"ecommerce\" type=\"462c0819:PsiDirectoryNode\" />\r\n              <item name=\"store\" type=\"462c0819:PsiDirectoryNode\" />\r\n            </path>\r\n            <path>\r\n              <item name=\"ecommerce\" type=\"b2602c69:ProjectViewProjectNode\" />\r\n              <item name=\"ecommerce\" type=\"462c0819:PsiDirectoryNode\" />\r\n              <item name=\"ecommerce\" type=\"462c0819:PsiDirectoryNode\" />\r\n              <item name=\"store\" type=\"462c0819:PsiDirectoryNode\" />\r\n              <item name=\"templates\" type=\"462c0819:PsiDirectoryNode\" />\r\n            </path>\r\n            <path>\r\n              <item name=\"ecommerce\" type=\"b2602c69:ProjectViewProjectNode\" />\r\n              <item name=\"ecommerce\" type=\"462c0819:PsiDirectoryNode\" />\r\n              <item name=\"ecommerce\" type=\"462c0819:PsiDirectoryNode\" />\r\n              <item name=\"store\" type=\"462c0819:PsiDirectoryNode\" />\r\n              <item name=\"templates\" type=\"462c0819:PsiDirectoryNode\" />\r\n              <item name=\"store\" type=\"462c0819:PsiDirectoryNode\" />\r\n            </path>\r\n          </expand>\r\n          <select />\r\n        </subPane>\r\n      </pane>\r\n    </panes>\r\n  </component>\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\">\r\n    <property name=\"DefaultHtmlFileTemplate\" value=\"HTML File\" />\r\n    <property name=\"SHARE_PROJECT_CONFIGURATION_FILES\" value=\"true\" />\r\n    <property name=\"WebServerToolWindowFactoryState\" value=\"false\" />\r\n    <property name=\"last_opened_file_path\" value=\"$PROJECT_DIR$\" />\r\n    <property name=\"list.type.of.created.stylesheet\" value=\"CSS\" />\r\n    <property name=\"nodejs_interpreter_path.stuck_in_default_project\" value=\"undefined stuck path\" />\r\n    <property name=\"nodejs_npm_path_reset_for_default_project\" value=\"true\" />\r\n    <property name=\"settings.editor.selected.configurable\" value=\"com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable\" />\r\n  </component>\r\n  <component name=\"RecentsManager\">\r\n    <key name=\"MoveFile.RECENT_KEYS\">\r\n      <recent name=\"C:\\Users\\mai.xuan.hoa\\Desktop\\ecommerce\\ecommerce\\static\\images\" />\r\n      <recent name=\"C:\\Users\\mai.xuan.hoa\\PycharmProjects\\ecommerce\\ecommerce\\static\\images\" />\r\n    </key>\r\n  </component>\r\n  <component name=\"RunDashboard\">\r\n    <option name=\"ruleStates\">\r\n      <list>\r\n        <RuleState>\r\n          <option name=\"name\" value=\"ConfigurationTypeDashboardGroupingRule\" />\r\n        </RuleState>\r\n        <RuleState>\r\n          <option name=\"name\" value=\"StatusDashboardGroupingRule\" />\r\n        </RuleState>\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" BundledDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" Dictionaries=\"0\" CorrectionsLimit=\"5\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" />\r\n  <component name=\"SvnConfiguration\">\r\n    <configuration />\r\n  </component>\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"98318bd0-ae6e-4560-ac26-86feacdd3bed\" name=\"Default Changelist\" comment=\"\" />\r\n      <created>1602304084256</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1602304084256</updated>\r\n      <workItem from=\"1602304086774\" duration=\"5843000\" />\r\n      <workItem from=\"1602318565011\" duration=\"497000\" />\r\n      <workItem from=\"1602320526145\" duration=\"2259000\" />\r\n      <workItem from=\"1602347567056\" duration=\"1275000\" />\r\n      <workItem from=\"1602385054320\" duration=\"7996000\" />\r\n      <workItem from=\"1602509164680\" duration=\"8264000\" />\r\n      <workItem from=\"1602550613164\" duration=\"6064000\" />\r\n      <workItem from=\"1602638228517\" duration=\"6342000\" />\r\n      <workItem from=\"1602816895744\" duration=\"599000\" />\r\n      <workItem from=\"1603154327145\" duration=\"1528000\" />\r\n      <workItem from=\"1603240423768\" duration=\"1674000\" />\r\n      <workItem from=\"1603242467523\" duration=\"1805000\" />\r\n      <workItem from=\"1603244915785\" duration=\"1697000\" />\r\n    </task>\r\n    <servers />\r\n  </component>\r\n  <component name=\"TimeTrackingManager\">\r\n    <option name=\"totallyTimeSpent\" value=\"19709000\" />\r\n  </component>\r\n  <component name=\"ToolWindowManager\">\r\n    <frame x=\"1912\" y=\"-8\" width=\"1936\" height=\"1056\" extended-state=\"7\" />\r\n    <layout>\r\n      <window_info content_ui=\"combo\" id=\"Project\" order=\"0\" visible=\"true\" weight=\"0.17148982\" />\r\n      <window_info id=\"Structure\" order=\"1\" side_tool=\"true\" weight=\"0.25\" />\r\n      <window_info id=\"Favorites\" order=\"2\" side_tool=\"true\" />\r\n      <window_info anchor=\"bottom\" id=\"Message\" order=\"0\" />\r\n      <window_info anchor=\"bottom\" id=\"Find\" order=\"1\" />\r\n      <window_info anchor=\"bottom\" id=\"Run\" order=\"2\" />\r\n      <window_info anchor=\"bottom\" id=\"Debug\" order=\"3\" weight=\"0.4\" />\r\n      <window_info anchor=\"bottom\" id=\"Cvs\" order=\"4\" weight=\"0.25\" />\r\n      <window_info anchor=\"bottom\" id=\"Inspection\" order=\"5\" weight=\"0.4\" />\r\n      <window_info anchor=\"bottom\" id=\"TODO\" order=\"6\" />\r\n      <window_info anchor=\"bottom\" id=\"Docker\" order=\"7\" show_stripe_button=\"false\" />\r\n      <window_info anchor=\"bottom\" id=\"Version Control\" order=\"8\" />\r\n      <window_info anchor=\"bottom\" id=\"Database Changes\" order=\"9\" />\r\n      <window_info anchor=\"bottom\" id=\"Event Log\" order=\"10\" sideWeight=\"0.5005359\" side_tool=\"true\" weight=\"0.24195339\" />\r\n      <window_info active=\"true\" anchor=\"bottom\" id=\"Terminal\" order=\"11\" sideWeight=\"0.4994641\" visible=\"true\" weight=\"0.24195339\" />\r\n      <window_info anchor=\"bottom\" id=\"Python Console\" order=\"12\" />\r\n      <window_info anchor=\"right\" id=\"Commander\" internal_type=\"SLIDING\" order=\"0\" type=\"SLIDING\" weight=\"0.4\" />\r\n      <window_info anchor=\"right\" id=\"Ant Build\" order=\"1\" weight=\"0.25\" />\r\n      <window_info anchor=\"right\" content_ui=\"combo\" id=\"Hierarchy\" order=\"2\" weight=\"0.25\" />\r\n      <window_info anchor=\"right\" id=\"SciView\" order=\"3\" />\r\n      <window_info anchor=\"right\" id=\"Database\" order=\"4\" />\r\n    </layout>\r\n  </component>\r\n  <component name=\"TypeScriptGeneratedFilesManager\">\r\n    <option name=\"version\" value=\"1\" />\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State>\r\n              <option name=\"RECENTLY_FILTERED_USER_GROUPS\">\r\n                <collection />\r\n              </option>\r\n              <option name=\"RECENTLY_FILTERED_BRANCH_GROUPS\">\r\n                <collection />\r\n              </option>\r\n            </State>\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n    <option name=\"RECENT_FILTERS\">\r\n      <map>\r\n        <entry key=\"Branch\">\r\n          <value>\r\n            <list />\r\n          </value>\r\n        </entry>\r\n        <entry key=\"User\">\r\n          <value>\r\n            <list />\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n  </component>\r\n  <component name=\"editorHistoryManager\">\r\n    <entry file=\"file://$PROJECT_DIR$/ecommerce/static/js/cảt.js\" />\r\n    <entry file=\"file://$PROJECT_DIR$/ecommerce/store/templates/store/store.html\">\r\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\r\n        <state relative-caret-position=\"306\">\r\n          <caret line=\"17\" column=\"20\" selection-start-line=\"17\" selection-start-column=\"20\" selection-end-line=\"17\" selection-end-column=\"20\" />\r\n          <folding>\r\n            <element signature=\"n#style#0;n#h4#0;n#div#0;n#div#0;n#div#0;n#!!top\" expanded=\"true\" />\r\n          </folding>\r\n        </state>\r\n      </provider>\r\n    </entry>\r\n    <entry file=\"file://$PROJECT_DIR$/ecommerce/store/templates/store/cart.html\">\r\n      <provider selected=\"true\" editor-type-id=\"text-editor\" />\r\n    </entry>\r\n    <entry file=\"file://$USER_HOME$/PycharmProjects/ecommerce/venv/Lib/site-packages/django/core/management/base.py\">\r\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\r\n        <state relative-caret-position=\"217\">\r\n          <caret line=\"441\" selection-start-line=\"441\" selection-end-line=\"441\" />\r\n        </state>\r\n      </provider>\r\n    </entry>\r\n    <entry file=\"file://$USER_HOME$/PycharmProjects/ecommerce/venv/Lib/site-packages/django/core/management/commands/runserver.py\">\r\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\r\n        <state relative-caret-position=\"-238\">\r\n          <caret line=\"117\" selection-start-line=\"117\" selection-end-line=\"117\" />\r\n        </state>\r\n      </provider>\r\n    </entry>\r\n    <entry file=\"file://$PROJECT_DIR$/ecommerce/store/templates/store/main.html\">\r\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\r\n        <state relative-caret-position=\"1080\">\r\n          <caret line=\"60\" column=\"7\" selection-start-line=\"60\" selection-start-column=\"7\" selection-end-line=\"60\" selection-end-column=\"7\" />\r\n        </state>\r\n      </provider>\r\n    </entry>\r\n    <entry file=\"file://$PROJECT_DIR$/ecommerce/store/views.py\">\r\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\r\n        <state relative-caret-position=\"720\">\r\n          <caret line=\"42\" column=\"27\" selection-start-line=\"42\" selection-start-column=\"27\" selection-end-line=\"42\" selection-end-column=\"27\" />\r\n          <folding>\r\n            <element signature=\"e#0#35#0\" expanded=\"true\" />\r\n          </folding>\r\n        </state>\r\n      </provider>\r\n    </entry>\r\n    <entry file=\"file://$PROJECT_DIR$/ecommerce/store/templates/store/checkout.html\">\r\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\r\n        <state relative-caret-position=\"1170\">\r\n          <caret line=\"65\" column=\"49\" selection-start-line=\"65\" selection-start-column=\"23\" selection-end-line=\"65\" selection-end-column=\"49\" />\r\n        </state>\r\n      </provider>\r\n    </entry>\r\n    <entry file=\"file://$PROJECT_DIR$/ecommerce/store/urls.py\">\r\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\r\n        <state relative-caret-position=\"180\">\r\n          <caret line=\"11\" column=\"1\" selection-start-line=\"11\" selection-start-column=\"1\" selection-end-line=\"11\" selection-end-column=\"1\" />\r\n          <folding>\r\n            <element signature=\"e#0#28#0\" expanded=\"true\" />\r\n          </folding>\r\n        </state>\r\n      </provider>\r\n    </entry>\r\n    <entry file=\"file://$PROJECT_DIR$/ecommerce/store/models.py\">\r\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\r\n        <state relative-caret-position=\"518\">\r\n          <caret line=\"75\" column=\"26\" selection-start-line=\"75\" selection-start-column=\"26\" selection-end-line=\"75\" selection-end-column=\"26\" />\r\n          <folding>\r\n            <element signature=\"e#0#28#0\" expanded=\"true\" />\r\n          </folding>\r\n        </state>\r\n      </provider>\r\n    </entry>\r\n    <entry file=\"file://$PROJECT_DIR$/ecommerce/static/js/cart.js\">\r\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\r\n        <state relative-caret-position=\"338\">\r\n          <caret line=\"26\" column=\"38\" selection-start-line=\"26\" selection-start-column=\"38\" selection-end-line=\"26\" selection-end-column=\"38\" />\r\n        </state>\r\n      </provider>\r\n    </entry>\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- .idea/workspace.xml	(revision d631164d34ad7299a5896a5033ad86a6f822f480)
++++ .idea/workspace.xml	(date 1604068594391)
+@@ -16,7 +16,12 @@
+         <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+       </path>
+     </expand>
+-    <select />
++    <select>
++      <path>
++        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
++        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
++      </path>
++    </select>
+   </component>
+   <component name="ChangeListManager">
+     <list default="true" id="98318bd0-ae6e-4560-ac26-86feacdd3bed" name="Default Changelist" comment="">

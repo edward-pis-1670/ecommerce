@@ -1,0 +1,386 @@
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"BranchesTreeState\">\r\n    <expand>\r\n      <path>\r\n        <item name=\"ROOT\" type=\"e8cecc67:BranchNodeDescriptor\" />\r\n        <item name=\"LOCAL_ROOT\" type=\"e8cecc67:BranchNodeDescriptor\" />\r\n      </path>\r\n      <path>\r\n        <item name=\"ROOT\" type=\"e8cecc67:BranchNodeDescriptor\" />\r\n        <item name=\"REMOTE_ROOT\" type=\"e8cecc67:BranchNodeDescriptor\" />\r\n      </path>\r\n      <path>\r\n        <item name=\"ROOT\" type=\"e8cecc67:BranchNodeDescriptor\" />\r\n        <item name=\"REMOTE_ROOT\" type=\"e8cecc67:BranchNodeDescriptor\" />\r\n        <item name=\"GROUP_NODE:origin\" type=\"e8cecc67:BranchNodeDescriptor\" />\r\n      </path>\r\n    </expand>\r\n    <select />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"98318bd0-ae6e-4560-ac26-86feacdd3bed\" name=\"Default Changelist\" comment=\"\">\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/ecommerce.iml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/ecommerce.iml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/misc.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/misc.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/ecommerce/static/js/cart.js\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/ecommerce/static/js/cart.js\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/ecommerce/store/views.py\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/ecommerce/store/views.py\" afterDir=\"false\" />\r\n    </list>\r\n    <ignored path=\"$PROJECT_DIR$/venv/\" />\r\n    <option name=\"EXCLUDED_CONVERTED_TO_IGNORED\" value=\"true\" />\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"FileEditorManager\">\r\n    <splitter split-orientation=\"horizontal\" split-proportion=\"0.5\">\r\n      <split-first>\r\n        <leaf SIDE_TABS_SIZE_LIMIT_KEY=\"375\">\r\n          <file pinned=\"false\" current-in-tab=\"false\">\r\n            <entry file=\"file://$PROJECT_DIR$/ecommerce/store/templates/store/main.html\">\r\n              <provider selected=\"true\" editor-type-id=\"text-editor\">\r\n                <state relative-caret-position=\"1080\">\r\n                  <caret line=\"60\" column=\"7\" selection-start-line=\"60\" selection-start-column=\"7\" selection-end-line=\"60\" selection-end-column=\"7\" />\r\n                </state>\r\n              </provider>\r\n            </entry>\r\n          </file>\r\n          <file pinned=\"false\" current-in-tab=\"true\">\r\n            <entry file=\"file://$PROJECT_DIR$/ecommerce/store/models.py\">\r\n              <provider selected=\"true\" editor-type-id=\"text-editor\">\r\n                <state relative-caret-position=\"518\">\r\n                  <caret line=\"75\" column=\"26\" selection-start-line=\"75\" selection-start-column=\"26\" selection-end-line=\"75\" selection-end-column=\"26\" />\r\n                  <folding>\r\n                    <element signature=\"e#0#28#0\" expanded=\"true\" />\r\n                  </folding>\r\n                </state>\r\n              </provider>\r\n            </entry>\r\n          </file>\r\n          <file pinned=\"false\" current-in-tab=\"false\">\r\n            <entry file=\"file://$PROJECT_DIR$/ecommerce/store/views.py\">\r\n              <provider selected=\"true\" editor-type-id=\"text-editor\">\r\n                <state relative-caret-position=\"720\">\r\n                  <caret line=\"42\" column=\"27\" selection-start-line=\"42\" selection-start-column=\"27\" selection-end-line=\"42\" selection-end-column=\"27\" />\r\n                  <folding>\r\n                    <element signature=\"e#0#35#0\" expanded=\"true\" />\r\n                  </folding>\r\n                </state>\r\n              </provider>\r\n            </entry>\r\n          </file>\r\n          <file pinned=\"false\" current-in-tab=\"false\">\r\n            <entry file=\"file://$PROJECT_DIR$/ecommerce/store/templates/store/checkout.html\">\r\n              <provider selected=\"true\" editor-type-id=\"text-editor\">\r\n                <state relative-caret-position=\"1170\">\r\n                  <caret line=\"65\" column=\"49\" selection-start-line=\"65\" selection-start-column=\"23\" selection-end-line=\"65\" selection-end-column=\"49\" />\r\n                </state>\r\n              </provider>\r\n            </entry>\r\n          </file>\r\n          <file pinned=\"false\" current-in-tab=\"false\">\r\n            <entry file=\"file://$PROJECT_DIR$/ecommerce/store/urls.py\">\r\n              <provider selected=\"true\" editor-type-id=\"text-editor\">\r\n                <state relative-caret-position=\"180\">\r\n                  <caret line=\"11\" column=\"1\" selection-start-line=\"11\" selection-start-column=\"1\" selection-end-line=\"11\" selection-end-column=\"1\" />\r\n                  <folding>\r\n                    <element signature=\"e#0#28#0\" expanded=\"true\" />\r\n                  </folding>\r\n                </state>\r\n              </provider>\r\n            </entry>\r\n          </file>\r\n        </leaf>\r\n      </split-first>\r\n      <split-second>\r\n        <leaf SIDE_TABS_SIZE_LIMIT_KEY=\"375\">\r\n          <file pinned=\"false\" current-in-tab=\"true\">\r\n            <entry file=\"file://$PROJECT_DIR$/ecommerce/static/js/cart.js\">\r\n              <provider selected=\"true\" editor-type-id=\"text-editor\">\r\n                <state relative-caret-position=\"338\">\r\n                  <caret line=\"26\" column=\"38\" selection-start-line=\"26\" selection-start-column=\"38\" selection-end-line=\"26\" selection-end-column=\"38\" />\r\n                </state>\r\n              </provider>\r\n            </entry>\r\n          </file>\r\n        </leaf>\r\n      </split-second>\r\n    </splitter>\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"HTML File\" />\r\n        <option value=\"Python Script\" />\r\n        <option value=\"CSS File\" />\r\n        <option value=\"JavaScript File\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"IdeDocumentHistory\">\r\n    <option name=\"CHANGED_PATHS\">\r\n      <list>\r\n        <option value=\"$PROJECT_DIR$/ecommerce/static/js/cảt.js\" />\r\n        <option value=\"$PROJECT_DIR$/ecommerce/store/templates/store/store.html\" />\r\n        <option value=\"$PROJECT_DIR$/ecommerce/store/templates/store/main.html\" />\r\n        <option value=\"$PROJECT_DIR$/ecommerce/store/urls.py\" />\r\n        <option value=\"$PROJECT_DIR$/ecommerce/store/views.py\" />\r\n        <option value=\"$PROJECT_DIR$/ecommerce/static/js/cart.js\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"JupyterTrust\" id=\"1c0d7b27-b905-4da5-9fda-301513fcf84b\" />\r\n  <component name=\"ProjectFrameBounds\" extendedState=\"7\">\r\n    <option name=\"x\" value=\"1572\" />\r\n    <option name=\"y\" value=\"92\" />\r\n    <option name=\"width\" value=\"1936\" />\r\n    <option name=\"height\" value=\"1056\" />\r\n  </component>\r\n  <component name=\"ProjectId\" id=\"1ih6dLCetFCsjnUizVODlBQRFUc\" />\r\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\" />\r\n  <component name=\"ProjectView\">\r\n    <navigator proportions=\"\" version=\"1\">\r\n      <foldersAlwaysOnTop value=\"true\" />\r\n    </navigator>\r\n    <panes>\r\n      <pane id=\"Scope\" />\r\n      <pane id=\"ProjectPane\">\r\n        <subPane>\r\n          <expand>\r\n            <path>\r\n              <item name=\"ecommerce\" type=\"b2602c69:ProjectViewProjectNode\" />\r\n              <item name=\"ecommerce\" type=\"462c0819:PsiDirectoryNode\" />\r\n            </path>\r\n            <path>\r\n              <item name=\"ecommerce\" type=\"b2602c69:ProjectViewProjectNode\" />\r\n              <item name=\"ecommerce\" type=\"462c0819:PsiDirectoryNode\" />\r\n              <item name=\"ecommerce\" type=\"462c0819:PsiDirectoryNode\" />\r\n            </path>\r\n            <path>\r\n              <item name=\"ecommerce\" type=\"b2602c69:ProjectViewProjectNode\" />\r\n              <item name=\"ecommerce\" type=\"462c0819:PsiDirectoryNode\" />\r\n              <item name=\"ecommerce\" type=\"462c0819:PsiDirectoryNode\" />\r\n              <item name=\"static\" type=\"462c0819:PsiDirectoryNode\" />\r\n            </path>\r\n            <path>\r\n              <item name=\"ecommerce\" type=\"b2602c69:ProjectViewProjectNode\" />\r\n              <item name=\"ecommerce\" type=\"462c0819:PsiDirectoryNode\" />\r\n              <item name=\"ecommerce\" type=\"462c0819:PsiDirectoryNode\" />\r\n              <item name=\"static\" type=\"462c0819:PsiDirectoryNode\" />\r\n              <item name=\"css\" type=\"462c0819:PsiDirectoryNode\" />\r\n            </path>\r\n            <path>\r\n              <item name=\"ecommerce\" type=\"b2602c69:ProjectViewProjectNode\" />\r\n              <item name=\"ecommerce\" type=\"462c0819:PsiDirectoryNode\" />\r\n              <item name=\"ecommerce\" type=\"462c0819:PsiDirectoryNode\" />\r\n              <item name=\"static\" type=\"462c0819:PsiDirectoryNode\" />\r\n              <item name=\"js\" type=\"462c0819:PsiDirectoryNode\" />\r\n            </path>\r\n            <path>\r\n              <item name=\"ecommerce\" type=\"b2602c69:ProjectViewProjectNode\" />\r\n              <item name=\"ecommerce\" type=\"462c0819:PsiDirectoryNode\" />\r\n              <item name=\"ecommerce\" type=\"462c0819:PsiDirectoryNode\" />\r\n              <item name=\"store\" type=\"462c0819:PsiDirectoryNode\" />\r\n            </path>\r\n            <path>\r\n              <item name=\"ecommerce\" type=\"b2602c69:ProjectViewProjectNode\" />\r\n              <item name=\"ecommerce\" type=\"462c0819:PsiDirectoryNode\" />\r\n              <item name=\"ecommerce\" type=\"462c0819:PsiDirectoryNode\" />\r\n              <item name=\"store\" type=\"462c0819:PsiDirectoryNode\" />\r\n              <item name=\"templates\" type=\"462c0819:PsiDirectoryNode\" />\r\n            </path>\r\n            <path>\r\n              <item name=\"ecommerce\" type=\"b2602c69:ProjectViewProjectNode\" />\r\n              <item name=\"ecommerce\" type=\"462c0819:PsiDirectoryNode\" />\r\n              <item name=\"ecommerce\" type=\"462c0819:PsiDirectoryNode\" />\r\n              <item name=\"store\" type=\"462c0819:PsiDirectoryNode\" />\r\n              <item name=\"templates\" type=\"462c0819:PsiDirectoryNode\" />\r\n              <item name=\"store\" type=\"462c0819:PsiDirectoryNode\" />\r\n            </path>\r\n          </expand>\r\n          <select />\r\n        </subPane>\r\n      </pane>\r\n    </panes>\r\n  </component>\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\">\r\n    <property name=\"DefaultHtmlFileTemplate\" value=\"HTML File\" />\r\n    <property name=\"SHARE_PROJECT_CONFIGURATION_FILES\" value=\"true\" />\r\n    <property name=\"WebServerToolWindowFactoryState\" value=\"false\" />\r\n    <property name=\"last_opened_file_path\" value=\"$PROJECT_DIR$\" />\r\n    <property name=\"list.type.of.created.stylesheet\" value=\"CSS\" />\r\n    <property name=\"nodejs_interpreter_path.stuck_in_default_project\" value=\"undefined stuck path\" />\r\n    <property name=\"nodejs_npm_path_reset_for_default_project\" value=\"true\" />\r\n    <property name=\"settings.editor.selected.configurable\" value=\"com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable\" />\r\n  </component>\r\n  <component name=\"RecentsManager\">\r\n    <key name=\"MoveFile.RECENT_KEYS\">\r\n      <recent name=\"C:\\Users\\mai.xuan.hoa\\Desktop\\ecommerce\\ecommerce\\static\\images\" />\r\n      <recent name=\"C:\\Users\\mai.xuan.hoa\\PycharmProjects\\ecommerce\\ecommerce\\static\\images\" />\r\n    </key>\r\n  </component>\r\n  <component name=\"RunDashboard\">\r\n    <option name=\"ruleStates\">\r\n      <list>\r\n        <RuleState>\r\n          <option name=\"name\" value=\"ConfigurationTypeDashboardGroupingRule\" />\r\n        </RuleState>\r\n        <RuleState>\r\n          <option name=\"name\" value=\"StatusDashboardGroupingRule\" />\r\n        </RuleState>\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" BundledDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" Dictionaries=\"0\" CorrectionsLimit=\"5\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" />\r\n  <component name=\"SvnConfiguration\">\r\n    <configuration />\r\n  </component>\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"98318bd0-ae6e-4560-ac26-86feacdd3bed\" name=\"Default Changelist\" comment=\"\" />\r\n      <created>1602304084256</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1602304084256</updated>\r\n      <workItem from=\"1602304086774\" duration=\"5843000\" />\r\n      <workItem from=\"1602318565011\" duration=\"497000\" />\r\n      <workItem from=\"1602320526145\" duration=\"2259000\" />\r\n      <workItem from=\"1602347567056\" duration=\"1275000\" />\r\n      <workItem from=\"1602385054320\" duration=\"7996000\" />\r\n      <workItem from=\"1602509164680\" duration=\"8264000\" />\r\n      <workItem from=\"1602550613164\" duration=\"6064000\" />\r\n      <workItem from=\"1602638228517\" duration=\"6342000\" />\r\n      <workItem from=\"1602816895744\" duration=\"599000\" />\r\n      <workItem from=\"1603154327145\" duration=\"1528000\" />\r\n      <workItem from=\"1603240423768\" duration=\"1674000\" />\r\n      <workItem from=\"1603242467523\" duration=\"1805000\" />\r\n      <workItem from=\"1603244915785\" duration=\"1697000\" />\r\n    </task>\r\n    <servers />\r\n  </component>\r\n  <component name=\"TimeTrackingManager\">\r\n    <option name=\"totallyTimeSpent\" value=\"19709000\" />\r\n  </component>\r\n  <component name=\"ToolWindowManager\">\r\n    <frame x=\"1912\" y=\"-8\" width=\"1936\" height=\"1056\" extended-state=\"7\" />\r\n    <layout>\r\n      <window_info content_ui=\"combo\" id=\"Project\" order=\"0\" visible=\"true\" weight=\"0.17148982\" />\r\n      <window_info id=\"Structure\" order=\"1\" side_tool=\"true\" weight=\"0.25\" />\r\n      <window_info id=\"Favorites\" order=\"2\" side_tool=\"true\" />\r\n      <window_info anchor=\"bottom\" id=\"Message\" order=\"0\" />\r\n      <window_info anchor=\"bottom\" id=\"Find\" order=\"1\" />\r\n      <window_info anchor=\"bottom\" id=\"Run\" order=\"2\" />\r\n      <window_info anchor=\"bottom\" id=\"Debug\" order=\"3\" weight=\"0.4\" />\r\n      <window_info anchor=\"bottom\" id=\"Cvs\" order=\"4\" weight=\"0.25\" />\r\n      <window_info anchor=\"bottom\" id=\"Inspection\" order=\"5\" weight=\"0.4\" />\r\n      <window_info anchor=\"bottom\" id=\"TODO\" order=\"6\" />\r\n      <window_info anchor=\"bottom\" id=\"Docker\" order=\"7\" show_stripe_button=\"false\" />\r\n      <window_info anchor=\"bottom\" id=\"Version Control\" order=\"8\" />\r\n      <window_info anchor=\"bottom\" id=\"Database Changes\" order=\"9\" />\r\n      <window_info anchor=\"bottom\" id=\"Event Log\" order=\"10\" sideWeight=\"0.5005359\" side_tool=\"true\" weight=\"0.24195339\" />\r\n      <window_info active=\"true\" anchor=\"bottom\" id=\"Terminal\" order=\"11\" sideWeight=\"0.4994641\" visible=\"true\" weight=\"0.24195339\" />\r\n      <window_info anchor=\"bottom\" id=\"Python Console\" order=\"12\" />\r\n      <window_info anchor=\"right\" id=\"Commander\" internal_type=\"SLIDING\" order=\"0\" type=\"SLIDING\" weight=\"0.4\" />\r\n      <window_info anchor=\"right\" id=\"Ant Build\" order=\"1\" weight=\"0.25\" />\r\n      <window_info anchor=\"right\" content_ui=\"combo\" id=\"Hierarchy\" order=\"2\" weight=\"0.25\" />\r\n      <window_info anchor=\"right\" id=\"SciView\" order=\"3\" />\r\n      <window_info anchor=\"right\" id=\"Database\" order=\"4\" />\r\n    </layout>\r\n  </component>\r\n  <component name=\"TypeScriptGeneratedFilesManager\">\r\n    <option name=\"version\" value=\"1\" />\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State>\r\n              <option name=\"RECENTLY_FILTERED_USER_GROUPS\">\r\n                <collection />\r\n              </option>\r\n              <option name=\"RECENTLY_FILTERED_BRANCH_GROUPS\">\r\n                <collection />\r\n              </option>\r\n            </State>\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n    <option name=\"RECENT_FILTERS\">\r\n      <map>\r\n        <entry key=\"Branch\">\r\n          <value>\r\n            <list />\r\n          </value>\r\n        </entry>\r\n        <entry key=\"User\">\r\n          <value>\r\n            <list />\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n  </component>\r\n  <component name=\"editorHistoryManager\">\r\n    <entry file=\"file://$PROJECT_DIR$/ecommerce/static/js/cảt.js\" />\r\n    <entry file=\"file://$PROJECT_DIR$/ecommerce/store/templates/store/store.html\">\r\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\r\n        <state relative-caret-position=\"306\">\r\n          <caret line=\"17\" column=\"20\" selection-start-line=\"17\" selection-start-column=\"20\" selection-end-line=\"17\" selection-end-column=\"20\" />\r\n          <folding>\r\n            <element signature=\"n#style#0;n#h4#0;n#div#0;n#div#0;n#div#0;n#!!top\" expanded=\"true\" />\r\n          </folding>\r\n        </state>\r\n      </provider>\r\n    </entry>\r\n    <entry file=\"file://$PROJECT_DIR$/ecommerce/store/templates/store/cart.html\">\r\n      <provider selected=\"true\" editor-type-id=\"text-editor\" />\r\n    </entry>\r\n    <entry file=\"file://$USER_HOME$/PycharmProjects/ecommerce/venv/Lib/site-packages/django/core/management/base.py\">\r\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\r\n        <state relative-caret-position=\"217\">\r\n          <caret line=\"441\" selection-start-line=\"441\" selection-end-line=\"441\" />\r\n        </state>\r\n      </provider>\r\n    </entry>\r\n    <entry file=\"file://$USER_HOME$/PycharmProjects/ecommerce/venv/Lib/site-packages/django/core/management/commands/runserver.py\">\r\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\r\n        <state relative-caret-position=\"-238\">\r\n          <caret line=\"117\" selection-start-line=\"117\" selection-end-line=\"117\" />\r\n        </state>\r\n      </provider>\r\n    </entry>\r\n    <entry file=\"file://$PROJECT_DIR$/ecommerce/store/templates/store/main.html\">\r\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\r\n        <state relative-caret-position=\"1080\">\r\n          <caret line=\"60\" column=\"7\" selection-start-line=\"60\" selection-start-column=\"7\" selection-end-line=\"60\" selection-end-column=\"7\" />\r\n        </state>\r\n      </provider>\r\n    </entry>\r\n    <entry file=\"file://$PROJECT_DIR$/ecommerce/store/views.py\">\r\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\r\n        <state relative-caret-position=\"720\">\r\n          <caret line=\"42\" column=\"27\" selection-start-line=\"42\" selection-start-column=\"27\" selection-end-line=\"42\" selection-end-column=\"27\" />\r\n          <folding>\r\n            <element signature=\"e#0#35#0\" expanded=\"true\" />\r\n          </folding>\r\n        </state>\r\n      </provider>\r\n    </entry>\r\n    <entry file=\"file://$PROJECT_DIR$/ecommerce/store/templates/store/checkout.html\">\r\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\r\n        <state relative-caret-position=\"1170\">\r\n          <caret line=\"65\" column=\"49\" selection-start-line=\"65\" selection-start-column=\"23\" selection-end-line=\"65\" selection-end-column=\"49\" />\r\n        </state>\r\n      </provider>\r\n    </entry>\r\n    <entry file=\"file://$PROJECT_DIR$/ecommerce/store/urls.py\">\r\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\r\n        <state relative-caret-position=\"180\">\r\n          <caret line=\"11\" column=\"1\" selection-start-line=\"11\" selection-start-column=\"1\" selection-end-line=\"11\" selection-end-column=\"1\" />\r\n          <folding>\r\n            <element signature=\"e#0#28#0\" expanded=\"true\" />\r\n          </folding>\r\n        </state>\r\n      </provider>\r\n    </entry>\r\n    <entry file=\"file://$PROJECT_DIR$/ecommerce/store/models.py\">\r\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\r\n        <state relative-caret-position=\"518\">\r\n          <caret line=\"75\" column=\"26\" selection-start-line=\"75\" selection-start-column=\"26\" selection-end-line=\"75\" selection-end-column=\"26\" />\r\n          <folding>\r\n            <element signature=\"e#0#28#0\" expanded=\"true\" />\r\n          </folding>\r\n        </state>\r\n      </provider>\r\n    </entry>\r\n    <entry file=\"file://$PROJECT_DIR$/ecommerce/static/js/cart.js\">\r\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\r\n        <state relative-caret-position=\"338\">\r\n          <caret line=\"26\" column=\"38\" selection-start-line=\"26\" selection-start-column=\"38\" selection-end-line=\"26\" selection-end-column=\"38\" />\r\n        </state>\r\n      </provider>\r\n    </entry>\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- .idea/workspace.xml	(revision ae28f2d5477dd8d073f542eed2d39c1a87c83bf4)
++++ .idea/workspace.xml	(date 1603368147384)
+@@ -16,97 +16,21 @@
+         <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+       </path>
+     </expand>
+-    <select />
++    <select>
++      <path>
++        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
++        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
++        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
++        <item name="BRANCH:origin/master" type="e8cecc67:BranchNodeDescriptor" />
++      </path>
++    </select>
+   </component>
+   <component name="ChangeListManager">
+-    <list default="true" id="98318bd0-ae6e-4560-ac26-86feacdd3bed" name="Default Changelist" comment="">
+-      <change beforePath="$PROJECT_DIR$/.idea/ecommerce.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/ecommerce.iml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/ecommerce/static/js/cart.js" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce/static/js/cart.js" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/ecommerce/store/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce/store/views.py" afterDir="false" />
+-    </list>
+-    <ignored path="$PROJECT_DIR$/venv/" />
+-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
++    <list default="true" id="98318bd0-ae6e-4560-ac26-86feacdd3bed" name="Default Changelist" comment="" />
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+     <option name="LAST_RESOLUTION" value="IGNORE" />
+-  </component>
+-  <component name="FileEditorManager">
+-    <splitter split-orientation="horizontal" split-proportion="0.5">
+-      <split-first>
+-        <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
+-          <file pinned="false" current-in-tab="false">
+-            <entry file="file://$PROJECT_DIR$/ecommerce/store/templates/store/main.html">
+-              <provider selected="true" editor-type-id="text-editor">
+-                <state relative-caret-position="1080">
+-                  <caret line="60" column="7" selection-start-line="60" selection-start-column="7" selection-end-line="60" selection-end-column="7" />
+-                </state>
+-              </provider>
+-            </entry>
+-          </file>
+-          <file pinned="false" current-in-tab="true">
+-            <entry file="file://$PROJECT_DIR$/ecommerce/store/models.py">
+-              <provider selected="true" editor-type-id="text-editor">
+-                <state relative-caret-position="518">
+-                  <caret line="75" column="26" selection-start-line="75" selection-start-column="26" selection-end-line="75" selection-end-column="26" />
+-                  <folding>
+-                    <element signature="e#0#28#0" expanded="true" />
+-                  </folding>
+-                </state>
+-              </provider>
+-            </entry>
+-          </file>
+-          <file pinned="false" current-in-tab="false">
+-            <entry file="file://$PROJECT_DIR$/ecommerce/store/views.py">
+-              <provider selected="true" editor-type-id="text-editor">
+-                <state relative-caret-position="720">
+-                  <caret line="42" column="27" selection-start-line="42" selection-start-column="27" selection-end-line="42" selection-end-column="27" />
+-                  <folding>
+-                    <element signature="e#0#35#0" expanded="true" />
+-                  </folding>
+-                </state>
+-              </provider>
+-            </entry>
+-          </file>
+-          <file pinned="false" current-in-tab="false">
+-            <entry file="file://$PROJECT_DIR$/ecommerce/store/templates/store/checkout.html">
+-              <provider selected="true" editor-type-id="text-editor">
+-                <state relative-caret-position="1170">
+-                  <caret line="65" column="49" selection-start-line="65" selection-start-column="23" selection-end-line="65" selection-end-column="49" />
+-                </state>
+-              </provider>
+-            </entry>
+-          </file>
+-          <file pinned="false" current-in-tab="false">
+-            <entry file="file://$PROJECT_DIR$/ecommerce/store/urls.py">
+-              <provider selected="true" editor-type-id="text-editor">
+-                <state relative-caret-position="180">
+-                  <caret line="11" column="1" selection-start-line="11" selection-start-column="1" selection-end-line="11" selection-end-column="1" />
+-                  <folding>
+-                    <element signature="e#0#28#0" expanded="true" />
+-                  </folding>
+-                </state>
+-              </provider>
+-            </entry>
+-          </file>
+-        </leaf>
+-      </split-first>
+-      <split-second>
+-        <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
+-          <file pinned="false" current-in-tab="true">
+-            <entry file="file://$PROJECT_DIR$/ecommerce/static/js/cart.js">
+-              <provider selected="true" editor-type-id="text-editor">
+-                <state relative-caret-position="338">
+-                  <caret line="26" column="38" selection-start-line="26" selection-start-column="38" selection-end-line="26" selection-end-column="38" />
+-                </state>
+-              </provider>
+-            </entry>
+-          </file>
+-        </leaf>
+-      </split-second>
+-    </splitter>
+   </component>
+   <component name="FileTemplateManagerImpl">
+     <option name="RECENT_TEMPLATES">
+@@ -119,19 +43,12 @@
+     </option>
+   </component>
+   <component name="Git.Settings">
+-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+-  </component>
+-  <component name="IdeDocumentHistory">
+-    <option name="CHANGED_PATHS">
+-      <list>
+-        <option value="$PROJECT_DIR$/ecommerce/static/js/cảt.js" />
+-        <option value="$PROJECT_DIR$/ecommerce/store/templates/store/store.html" />
+-        <option value="$PROJECT_DIR$/ecommerce/store/templates/store/main.html" />
+-        <option value="$PROJECT_DIR$/ecommerce/store/urls.py" />
+-        <option value="$PROJECT_DIR$/ecommerce/store/views.py" />
+-        <option value="$PROJECT_DIR$/ecommerce/static/js/cart.js" />
+-      </list>
++    <option name="RECENT_BRANCH_BY_REPOSITORY">
++      <map>
++        <entry key="$PROJECT_DIR$" value="home" />
++      </map>
+     </option>
++    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+   </component>
+   <component name="JupyterTrust" id="1c0d7b27-b905-4da5-9fda-301513fcf84b" />
+   <component name="ProjectFrameBounds" extendedState="7">
+@@ -142,71 +59,6 @@
+   </component>
+   <component name="ProjectId" id="1ih6dLCetFCsjnUizVODlBQRFUc" />
+   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+-  <component name="ProjectView">
+-    <navigator proportions="" version="1">
+-      <foldersAlwaysOnTop value="true" />
+-    </navigator>
+-    <panes>
+-      <pane id="Scope" />
+-      <pane id="ProjectPane">
+-        <subPane>
+-          <expand>
+-            <path>
+-              <item name="ecommerce" type="b2602c69:ProjectViewProjectNode" />
+-              <item name="ecommerce" type="462c0819:PsiDirectoryNode" />
+-            </path>
+-            <path>
+-              <item name="ecommerce" type="b2602c69:ProjectViewProjectNode" />
+-              <item name="ecommerce" type="462c0819:PsiDirectoryNode" />
+-              <item name="ecommerce" type="462c0819:PsiDirectoryNode" />
+-            </path>
+-            <path>
+-              <item name="ecommerce" type="b2602c69:ProjectViewProjectNode" />
+-              <item name="ecommerce" type="462c0819:PsiDirectoryNode" />
+-              <item name="ecommerce" type="462c0819:PsiDirectoryNode" />
+-              <item name="static" type="462c0819:PsiDirectoryNode" />
+-            </path>
+-            <path>
+-              <item name="ecommerce" type="b2602c69:ProjectViewProjectNode" />
+-              <item name="ecommerce" type="462c0819:PsiDirectoryNode" />
+-              <item name="ecommerce" type="462c0819:PsiDirectoryNode" />
+-              <item name="static" type="462c0819:PsiDirectoryNode" />
+-              <item name="css" type="462c0819:PsiDirectoryNode" />
+-            </path>
+-            <path>
+-              <item name="ecommerce" type="b2602c69:ProjectViewProjectNode" />
+-              <item name="ecommerce" type="462c0819:PsiDirectoryNode" />
+-              <item name="ecommerce" type="462c0819:PsiDirectoryNode" />
+-              <item name="static" type="462c0819:PsiDirectoryNode" />
+-              <item name="js" type="462c0819:PsiDirectoryNode" />
+-            </path>
+-            <path>
+-              <item name="ecommerce" type="b2602c69:ProjectViewProjectNode" />
+-              <item name="ecommerce" type="462c0819:PsiDirectoryNode" />
+-              <item name="ecommerce" type="462c0819:PsiDirectoryNode" />
+-              <item name="store" type="462c0819:PsiDirectoryNode" />
+-            </path>
+-            <path>
+-              <item name="ecommerce" type="b2602c69:ProjectViewProjectNode" />
+-              <item name="ecommerce" type="462c0819:PsiDirectoryNode" />
+-              <item name="ecommerce" type="462c0819:PsiDirectoryNode" />
+-              <item name="store" type="462c0819:PsiDirectoryNode" />
+-              <item name="templates" type="462c0819:PsiDirectoryNode" />
+-            </path>
+-            <path>
+-              <item name="ecommerce" type="b2602c69:ProjectViewProjectNode" />
+-              <item name="ecommerce" type="462c0819:PsiDirectoryNode" />
+-              <item name="ecommerce" type="462c0819:PsiDirectoryNode" />
+-              <item name="store" type="462c0819:PsiDirectoryNode" />
+-              <item name="templates" type="462c0819:PsiDirectoryNode" />
+-              <item name="store" type="462c0819:PsiDirectoryNode" />
+-            </path>
+-          </expand>
+-          <select />
+-        </subPane>
+-      </pane>
+-    </panes>
+-  </component>
+   <component name="ProjectViewState">
+     <option name="hideEmptyMiddlePackages" value="true" />
+     <option name="showLibraryContents" value="true" />
+@@ -227,19 +79,7 @@
+       <recent name="C:\Users\mai.xuan.hoa\PycharmProjects\ecommerce\ecommerce\static\images" />
+     </key>
+   </component>
+-  <component name="RunDashboard">
+-    <option name="ruleStates">
+-      <list>
+-        <RuleState>
+-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+-        </RuleState>
+-        <RuleState>
+-          <option name="name" value="StatusDashboardGroupingRule" />
+-        </RuleState>
+-      </list>
+-    </option>
+-  </component>
+-  <component name="SpellCheckerSettings" BundledDictionaries="0" Folders="0" CustomDictionaries="0" Dictionaries="0" CorrectionsLimit="5" DefaultDictionary="application-level" UseSingleDictionary="true" />
++  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="false" />
+   <component name="SvnConfiguration">
+     <configuration />
+   </component>
+@@ -265,35 +105,6 @@
+       <workItem from="1603244915785" duration="1697000" />
+     </task>
+     <servers />
+-  </component>
+-  <component name="TimeTrackingManager">
+-    <option name="totallyTimeSpent" value="19709000" />
+-  </component>
+-  <component name="ToolWindowManager">
+-    <frame x="1912" y="-8" width="1936" height="1056" extended-state="7" />
+-    <layout>
+-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.17148982" />
+-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+-      <window_info id="Favorites" order="2" side_tool="true" />
+-      <window_info anchor="bottom" id="Message" order="0" />
+-      <window_info anchor="bottom" id="Find" order="1" />
+-      <window_info anchor="bottom" id="Run" order="2" />
+-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+-      <window_info anchor="bottom" id="TODO" order="6" />
+-      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+-      <window_info anchor="bottom" id="Version Control" order="8" />
+-      <window_info anchor="bottom" id="Database Changes" order="9" />
+-      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5005359" side_tool="true" weight="0.24195339" />
+-      <window_info active="true" anchor="bottom" id="Terminal" order="11" sideWeight="0.4994641" visible="true" weight="0.24195339" />
+-      <window_info anchor="bottom" id="Python Console" order="12" />
+-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+-      <window_info anchor="right" id="SciView" order="3" />
+-      <window_info anchor="right" id="Database" order="4" />
+-    </layout>
+   </component>
+   <component name="TypeScriptGeneratedFilesManager">
+     <option name="version" value="1" />
+@@ -304,11 +115,16 @@
+         <entry key="MAIN">
+           <value>
+             <State>
+-              <option name="RECENTLY_FILTERED_USER_GROUPS">
+-                <collection />
+-              </option>
+-              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+-                <collection />
++              <option name="FILTERS">
++                <map>
++                  <entry key="branch">
++                    <value>
++                      <list>
++                        <option value="origin/master" />
++                      </list>
++                    </value>
++                  </entry>
++                </map>
+               </option>
+             </State>
+           </value>
+@@ -329,86 +145,12 @@
+         </entry>
+       </map>
+     </option>
++    <option name="oldMeFiltersMigrated" value="true" />
+   </component>
+-  <component name="editorHistoryManager">
+-    <entry file="file://$PROJECT_DIR$/ecommerce/static/js/cảt.js" />
+-    <entry file="file://$PROJECT_DIR$/ecommerce/store/templates/store/store.html">
+-      <provider selected="true" editor-type-id="text-editor">
+-        <state relative-caret-position="306">
+-          <caret line="17" column="20" selection-start-line="17" selection-start-column="20" selection-end-line="17" selection-end-column="20" />
+-          <folding>
+-            <element signature="n#style#0;n#h4#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+-          </folding>
+-        </state>
+-      </provider>
+-    </entry>
+-    <entry file="file://$PROJECT_DIR$/ecommerce/store/templates/store/cart.html">
+-      <provider selected="true" editor-type-id="text-editor" />
+-    </entry>
+-    <entry file="file://$USER_HOME$/PycharmProjects/ecommerce/venv/Lib/site-packages/django/core/management/base.py">
+-      <provider selected="true" editor-type-id="text-editor">
+-        <state relative-caret-position="217">
+-          <caret line="441" selection-start-line="441" selection-end-line="441" />
+-        </state>
+-      </provider>
+-    </entry>
+-    <entry file="file://$USER_HOME$/PycharmProjects/ecommerce/venv/Lib/site-packages/django/core/management/commands/runserver.py">
+-      <provider selected="true" editor-type-id="text-editor">
+-        <state relative-caret-position="-238">
+-          <caret line="117" selection-start-line="117" selection-end-line="117" />
+-        </state>
+-      </provider>
+-    </entry>
+-    <entry file="file://$PROJECT_DIR$/ecommerce/store/templates/store/main.html">
+-      <provider selected="true" editor-type-id="text-editor">
+-        <state relative-caret-position="1080">
+-          <caret line="60" column="7" selection-start-line="60" selection-start-column="7" selection-end-line="60" selection-end-column="7" />
+-        </state>
+-      </provider>
+-    </entry>
+-    <entry file="file://$PROJECT_DIR$/ecommerce/store/views.py">
+-      <provider selected="true" editor-type-id="text-editor">
+-        <state relative-caret-position="720">
+-          <caret line="42" column="27" selection-start-line="42" selection-start-column="27" selection-end-line="42" selection-end-column="27" />
+-          <folding>
+-            <element signature="e#0#35#0" expanded="true" />
+-          </folding>
+-        </state>
+-      </provider>
+-    </entry>
+-    <entry file="file://$PROJECT_DIR$/ecommerce/store/templates/store/checkout.html">
+-      <provider selected="true" editor-type-id="text-editor">
+-        <state relative-caret-position="1170">
+-          <caret line="65" column="49" selection-start-line="65" selection-start-column="23" selection-end-line="65" selection-end-column="49" />
+-        </state>
+-      </provider>
+-    </entry>
+-    <entry file="file://$PROJECT_DIR$/ecommerce/store/urls.py">
+-      <provider selected="true" editor-type-id="text-editor">
+-        <state relative-caret-position="180">
+-          <caret line="11" column="1" selection-start-line="11" selection-start-column="1" selection-end-line="11" selection-end-column="1" />
+-          <folding>
+-            <element signature="e#0#28#0" expanded="true" />
+-          </folding>
+-        </state>
+-      </provider>
+-    </entry>
+-    <entry file="file://$PROJECT_DIR$/ecommerce/store/models.py">
+-      <provider selected="true" editor-type-id="text-editor">
+-        <state relative-caret-position="518">
+-          <caret line="75" column="26" selection-start-line="75" selection-start-column="26" selection-end-line="75" selection-end-column="26" />
+-          <folding>
+-            <element signature="e#0#28#0" expanded="true" />
+-          </folding>
+-        </state>
+-      </provider>
+-    </entry>
+-    <entry file="file://$PROJECT_DIR$/ecommerce/static/js/cart.js">
+-      <provider selected="true" editor-type-id="text-editor">
+-        <state relative-caret-position="338">
+-          <caret line="26" column="38" selection-start-line="26" selection-start-column="38" selection-end-line="26" selection-end-column="38" />
+-        </state>
+-      </provider>
+-    </entry>
++  <component name="WindowStateProjectService">
++    <state x="777" y="434" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1603368147324">
++      <screen x="0" y="0" width="1920" height="1040" />
++    </state>
++    <state x="777" y="434" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040@0.0.1920.1040" timestamp="1603368147324" />
+   </component>
+ </project>
+\ No newline at end of file

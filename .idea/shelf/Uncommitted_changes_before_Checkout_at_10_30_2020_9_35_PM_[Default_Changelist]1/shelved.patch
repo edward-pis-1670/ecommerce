@@ -1,0 +1,568 @@
+Index: ecommerce/store/templates/store/checkout.html
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>{% extends 'store/main.html' %}\r\n{% load static %}\r\n{% block content %}\r\n     <div class=\"row\">\r\n\t\t<div class=\"col-lg-6\">\r\n\t\t\t<div class=\"box-element\" id=\"form-wrapper\">\r\n\t\t\t\t<form id=\"form\">\r\n\t\t\t\t\t<div id=\"user-info\">\r\n\t\t\t\t\t\t<div class=\"form-field\">\r\n\t\t\t\t\t\t\t<input required class=\"form-control\" type=\"text\" name=\"name\" placeholder=\"Name..\">\r\n\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t<div class=\"form-field\">\r\n\t\t\t\t\t\t\t<input required class=\"form-control\" type=\"email\" name=\"email\" placeholder=\"Email..\">\r\n\t\t\t\t\t\t</div>\r\n\t\t\t\t\t</div>\r\n\t\t\t\t\t\r\n\t\t\t\t\t<div id=\"shipping-info\">\r\n\t\t\t\t\t\t<hr>\r\n\t\t\t\t\t\t<p>Shipping Information:</p>\r\n\t\t\t\t\t\t<hr>\r\n\t\t\t\t\t\t<div class=\"form-field\">\r\n\t\t\t\t\t\t\t<input class=\"form-control\" type=\"text\" name=\"address\" placeholder=\"Address..\">\r\n\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t<div class=\"form-field\">\r\n\t\t\t\t\t\t\t<input class=\"form-control\" type=\"text\" name=\"city\" placeholder=\"City..\">\r\n\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t<div class=\"form-field\">\r\n\t\t\t\t\t\t\t<input class=\"form-control\" type=\"text\" name=\"state\" placeholder=\"State..\">\r\n\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t<div class=\"form-field\">\r\n\t\t\t\t\t\t\t<input class=\"form-control\" type=\"text\" name=\"zipcode\" placeholder=\"Zip code..\">\r\n\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t<div class=\"form-field\">\r\n\t\t\t\t\t\t\t<input class=\"form-control\" type=\"text\" name=\"country\" placeholder=\"Zip code..\">\r\n\t\t\t\t\t\t</div>\r\n\t\t\t\t\t</div>\r\n\r\n\t\t\t\t\t<hr>\r\n\t\t\t\t\t<input id=\"form-button\" class=\"btn btn-success btn-block\" type=\"submit\" value=\"Continue\">\r\n\t\t\t\t</form>\r\n\t\t\t</div>\r\n        <br>\r\n        <div class=\"box-element hidden\" id=\"payment-info\">\r\n            <small>Paypal Option</small>\r\n            <button id=\"make-payment\">Make Payment</button>\r\n\r\n        </div>\r\n    </div>\r\n\r\n    <div class=\"col-lg-6\">\r\n        <div class=\"box-element\">\r\n            <a class=\"btn btn-outline-dark\" href=\"{% url 'cart'%}\">&#x2199;Back to Cart</a>\r\n            <hr>\r\n            <h3>Order Summary</h3>\r\n            <hr>\r\n            {% for item in items %}\r\n            <div class=\"cart-row\">\r\n                <div style=\"flex:2\"><img class=\"row-image\" src=\"{{ item.product.ImageURL }}\"></div>\r\n                <div style=\"flex:2\"><p>{{ item.product.name }}</p></div>\r\n                <div style=\"flex:1\"><p>{{ item.product.price }}</p></div>\r\n                <div style=\"flex:1\"><p>{{ item.quatity }}</p></div>\r\n            </div>\r\n            {% endfor %}\r\n            <h5>Items: {{ order.get_cart_items }}</h5>\r\n            <h5>Total: ${{ order.get_cart_total|floatformat:2 }}</h5>\r\n\r\n        </div>\r\n\r\n    </div>\r\n\r\n</div>\r\n\r\n    <script type=\"text/javascript\">\r\n        var shipping = '{{ order.shipping }}';\r\n\r\n        if (shipping == 'False'){\r\n            document.getElementById('shipping-info').innerHTML=''\r\n        }\r\n\r\n        if (user != 'AnonymousUser'){\r\n            document.getElementById('user-info').innerHTML =''\r\n        }\r\n\r\n        if (shipping == 'False' && user != 'AnonymousUser'){\r\n            //Hide entire form if user is logged in and shipping is false\r\n            document.getElementById('form-wrapper').classList.add(\"hidden\");\r\n\t\t\t\t//Show payment if logged in user wants to buy an item that does not require shipping\r\n            document.getElementById('payment-info').classList.remove(\"hidden\");\r\n\r\n        }\r\n\r\n\r\n        var form = document.getElementById('form');\r\n\r\n        form.addEventListener('submit',function(e) {\r\n            e.preventDefault()\r\n            console.log('Form submitted...')\r\n            document.getElementById('form-button').classList.add('hidden')\r\n            document.getElementById('payment-info').classList.remove('hidden')\r\n        } )\r\n        {% comment %} document.getElementById('make-payment').addEventListener('click',function(){\r\n            submitFormData()\r\n        }) {% endcomment %}\r\n        function submitFormData(){\r\n            console.log('Payment button clicked')\r\n        }\r\n    </script>\r\n{% endblock content %}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- ecommerce/store/templates/store/checkout.html	(revision 3fb513d2214350d6b036bb1f8a17414253711c50)
++++ ecommerce/store/templates/store/checkout.html	(date 1603385423659)
+@@ -31,7 +31,7 @@
+ 							<input class="form-control" type="text" name="zipcode" placeholder="Zip code..">
+ 						</div>
+ 						<div class="form-field">
+-							<input class="form-control" type="text" name="country" placeholder="Zip code..">
++							<input class="form-control" type="text" name="country" placeholder="Country">
+ 						</div>
+ 					</div>
+ 
+@@ -57,8 +57,8 @@
+             <div class="cart-row">
+                 <div style="flex:2"><img class="row-image" src="{{ item.product.ImageURL }}"></div>
+                 <div style="flex:2"><p>{{ item.product.name }}</p></div>
+-                <div style="flex:1"><p>{{ item.product.price }}</p></div>
+-                <div style="flex:1"><p>{{ item.quatity }}</p></div>
++                <div style="flex:1"><p>{{ item.product.price|floatformat:2 }}</p></div>
++                <div style="flex:1"><p>{{ item.quantity }}</p></div>
+             </div>
+             {% endfor %}
+             <h5>Items: {{ order.get_cart_items }}</h5>
+@@ -71,38 +71,35 @@
+ </div>
+ 
+     <script type="text/javascript">
+-        var shipping = '{{ order.shipping }}';
++        let shipping = '{{order.shipping}}'
+ 
+-        if (shipping == 'False'){
++        if (shipping === 'False'){
+             document.getElementById('shipping-info').innerHTML=''
+         }
+ 
+-        if (user != 'AnonymousUser'){
++        if (user !== 'AnonymousUser'){
+             document.getElementById('user-info').innerHTML =''
+         }
+ 
+-        if (shipping == 'False' && user != 'AnonymousUser'){
+-            //Hide entire form if user is logged in and shipping is false
+-            document.getElementById('form-wrapper').classList.add("hidden");
+-				//Show payment if logged in user wants to buy an item that does not require shipping
+-            document.getElementById('payment-info').classList.remove("hidden");
+-
+-        }
++        if (shipping === 'False' && user !== 'AnonymousUser'){
++			document.getElementById('form-wrapper').classList.add('hidden')
++			document.getElementById('payment-info').classList.remove('hidden')
++		}
+ 
+-
+-        var form = document.getElementById('form');
++        let form = document.getElementById('form');
+ 
+         form.addEventListener('submit',function(e) {
+             e.preventDefault()
+             console.log('Form submitted...')
+             document.getElementById('form-button').classList.add('hidden')
+             document.getElementById('payment-info').classList.remove('hidden')
+-        } )
+-        {% comment %} document.getElementById('make-payment').addEventListener('click',function(){
++        })
++        document.getElementById('make-payment').addEventListener('click',function(e){
+             submitFormData()
+-        }) {% endcomment %}
++        })
+         function submitFormData(){
+             console.log('Payment button clicked')
+-        }
++	    }
++
+     </script>
+ {% endblock content %}
+\ No newline at end of file
+Index: ecommerce/static/js/cart.js
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>var updateBtns = document.getElementsByClassName('update-cart')\r\n\r\n\r\n\r\nfor(var i = 0;i < updateBtns.length; i++){\r\n    updateBtns[i].addEventListener('click',function () {\r\n        var productId = this.dataset.product\r\n        var action = this.dataset.action\r\n        console.log('productId:', productId, 'Action:', action)\r\n        console.log('USER:',user)\r\n        if (user == 'AnonymousUser'){\r\n            console.log('Not logged in')\r\n        }else{\r\n            updateUserOrder(productId,action)\r\n        }\r\n    })\r\n}\r\n\r\nfunction updateUserOrder(productId, action) {\r\n    console.log('User is logged in , sending data...')\r\n    var url = '/update_item/'\r\n\r\n    fetch(url,{\r\n        method:'POST',\r\n        headers:{\r\n            'Content-Type':'application/json',\r\n            'X-CSRFToken' : csrftoken,\r\n        },\r\n        body:JSON.stringify({'productId':productId,'action':action})\r\n    })\r\n    .then((response) =>{\r\n        return response.json();\r\n    })\r\n    .then((data) =>{\r\n        console.log('data:',data)\r\n        location.reload()\r\n    });\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- ecommerce/static/js/cart.js	(revision 3fb513d2214350d6b036bb1f8a17414253711c50)
++++ ecommerce/static/js/cart.js	(date 1603381924464)
+@@ -8,7 +8,7 @@
+         var action = this.dataset.action
+         console.log('productId:', productId, 'Action:', action)
+         console.log('USER:',user)
+-        if (user == 'AnonymousUser'){
++        if (user === 'AnonymousUser'){
+             console.log('Not logged in')
+         }else{
+             updateUserOrder(productId,action)
+Index: ecommerce/store/views.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>from django.shortcuts import render\r\nfrom .models import *\r\nfrom django.http import JsonResponse\r\nimport json\r\n\r\n\r\n# Create your views here.\r\ndef store(request):\r\n    if request.user.is_authenticated:\r\n        customer = request.user.customer\r\n        order, created = Order.objects.get_or_create(customer=customer, complete=False)\r\n        items = order.orderitem_set.all()\r\n        cartItems = order.get_cart_items\r\n    else:\r\n        items = []\r\n        order = {'get_cart_total': 0, 'get_cart_items': 0, 'shipping': False}\r\n        cartItems = order['get_cart_items']\r\n    products = Product.objects.all()\r\n    context = {'products': products, 'cartItems': cartItems}\r\n    return render(request, 'store/store.html', context)\r\n\r\n\r\ndef cart(request):\r\n    if request.user.is_authenticated:\r\n        customer = request.user.customer\r\n        order, created = Order.objects.get_or_create(customer=customer, complete=False)\r\n        items = order.orderitem_set.all()\r\n        cartItems = order.get_cart_items\r\n    else:\r\n        items = []\r\n        order = {'get_cart_total': 0, 'get_cart_items': 0}\r\n        cartItems = order['get_cart_items']\r\n    context = {'items': items, 'order': order, 'cartItems': cartItems,'shipping': False}\r\n\r\n    return render(request, 'store/cart.html', context)\r\n\r\n\r\ndef checkout(request):\r\n    if request.user.is_authenticated:\r\n        customer = request.user.customer\r\n        order, created = Order.objects.get_or_create(customer=customer, complete=False)\r\n        items = order.orderitem_set.all()\r\n        cartItems = order.get_cart_items\r\n    else:\r\n        items = []\r\n        order = {'get_cart_total': 0, 'get_cart_items': 0}\r\n        cartItems = order['get_cart_items']\r\n    context = {'items': items, 'order': order, 'cartItems': cartItems, 'shipping': False}\r\n    return render(request, 'store/checkout.html', context)\r\n\r\n\r\ndef updateItem(request):\r\n    data = json.loads(request.body)\r\n    productId = data['productId']\r\n    action = data['action']\r\n    print('Action:', action)\r\n    print('productId:', productId)\r\n    customer = request.user.customer\r\n    product = Product.objects.get(id=productId)\r\n    order, created = Order.objects.get_or_create(customer=customer, complete=False)\r\n    orderItem, created = OrderItem.objects.get_or_create(order=order, product=product)\r\n    if action == 'add':\r\n        orderItem.quantity = (orderItem.quantity + 1)\r\n    elif action == 'remove':\r\n        orderItem.quantity = (orderItem.quantity - 1)\r\n    orderItem.save()\r\n    if orderItem.quantity <= 0:\r\n        orderItem.delete()\r\n    return JsonResponse('Item was added', safe=False)\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- ecommerce/store/views.py	(revision 3fb513d2214350d6b036bb1f8a17414253711c50)
++++ ecommerce/store/views.py	(date 1603384360908)
+@@ -10,7 +10,7 @@
+         customer = request.user.customer
+         order, created = Order.objects.get_or_create(customer=customer, complete=False)
+         items = order.orderitem_set.all()
+-        cartItems = order.get_cart_items
++        cartItems = order['get_cart_items']
+     else:
+         items = []
+         order = {'get_cart_total': 0, 'get_cart_items': 0, 'shipping': False}
+@@ -28,9 +28,9 @@
+         cartItems = order.get_cart_items
+     else:
+         items = []
+-        order = {'get_cart_total': 0, 'get_cart_items': 0}
++        order = {'get_cart_total': 0, 'get_cart_items': 0,'shipping': False}
+         cartItems = order['get_cart_items']
+-    context = {'items': items, 'order': order, 'cartItems': cartItems,'shipping': False}
++    context = {'items': items, 'order': order, 'cartItems': cartItems}
+ 
+     return render(request, 'store/cart.html', context)
+ 
+@@ -45,7 +45,7 @@
+         items = []
+         order = {'get_cart_total': 0, 'get_cart_items': 0}
+         cartItems = order['get_cart_items']
+-    context = {'items': items, 'order': order, 'cartItems': cartItems, 'shipping': False}
++    context = {'items': items, 'order': order, 'cartItems': cartItems}
+     return render(request, 'store/checkout.html', context)
+ 
+ 
+Index: ecommerce/store/models.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>from django.db import models\r\nfrom django.contrib.auth.models import User\r\nfrom django.utils import timezone\r\n\r\n# Create your models here.\r\n\r\nclass Customer(models.Model):\r\n    user = models.OneToOneField(User,null=True, blank=True, on_delete=models.CASCADE)\r\n    name = models.CharField(max_length=200,null=True)\r\n    email = models.CharField(max_length=200)\r\n\r\n    def __str__(self):\r\n        return self.name\r\n\r\nclass Product(models.Model):\r\n    name = models.CharField(max_length=200, null=True)\r\n    price = models.FloatField()\r\n    digital = models.BooleanField(default=False, null=True, blank=True)\r\n    #image\r\n    image = models.ImageField(null=True, blank=True)\r\n    def __str__(self):\r\n        return self.name\r\n\r\n    @property\r\n    def ImageURL(self):\r\n        try:\r\n            url = self.image.url\r\n        except:\r\n            url = ''\r\n        return url\r\n\r\n\r\n\r\n\r\nclass Order(models.Model):\r\n    customer = models.ForeignKey(Customer,on_delete=models.SET_NULL,blank=True,null=True)\r\n    date_orderd = models.DateTimeField(auto_now_add=True)\r\n    complete = models.BooleanField(default=False)\r\n    transaction_id = models.CharField(max_length=200,null=True)\r\n\r\n    def __str__(self):\r\n        return str(self.id)\r\n\r\n    @property\r\n    def shipping(self):\r\n        shipping = False\r\n        orderitems = self.orderitem_set.all()\r\n        for i in orderitems:\r\n            if i.product.digital == False:\r\n                shipping =True\r\n        return shipping\r\n\r\n\r\n    @property\r\n    def get_cart_total(self):\r\n        orderitems = self.orderitem_set.all()\r\n        total = sum([item.get_total for item in orderitems])\r\n        return total\r\n    @property\r\n    def get_cart_items(self):\r\n        orderitems = self.orderitem_set.all()\r\n        total = sum([item.quantity for item in orderitems])\r\n        return total\r\n\r\nclass OrderItem(models.Model):\r\n    product = models.ForeignKey(Product, on_delete=models.SET_NULL, null=True)\r\n    order = models.ForeignKey(Order, on_delete=models.SET_NULL, null=True)\r\n    quantity = models.IntegerField(default=0, null=True, blank=True)\r\n    date_added = models.DateTimeField(auto_now_add=True)\r\n\r\n    @property\r\n    def get_total(self):\r\n        total = self.product.price * self.quantity\r\n        return total\r\n\r\n\r\nclass ShippingAdress(models.Model):\r\n    customer = models.ForeignKey(Customer, on_delete=models.SET_NULL, null=True)\r\n    order = models.ForeignKey(Order, on_delete=models.SET_NULL, null=True)\r\n    adress = models.CharField(max_length=200, null=False)\r\n    city = models.CharField(max_length=200, null=False)\r\n    state = models.CharField(max_length=200, null=False)\r\n    zipcode = models.CharField(max_length=200, null=False)\r\n    date_added = models.DateTimeField(auto_now_add=True)\r\n\r\n    def __str__(self):\r\n        return self.adress
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- ecommerce/store/models.py	(revision 3fb513d2214350d6b036bb1f8a17414253711c50)
++++ ecommerce/store/models.py	(date 1603384797943)
+@@ -1,28 +1,29 @@
+ from django.db import models
+ from django.contrib.auth.models import User
+-from django.utils import timezone
++
+ 
+ # Create your models here.
+ 
+ class Customer(models.Model):
+-    user = models.OneToOneField(User,null=True, blank=True, on_delete=models.CASCADE)
+-    name = models.CharField(max_length=200,null=True)
++    user = models.OneToOneField(User, null=True, blank=True, on_delete=models.CASCADE)
++    name = models.CharField(max_length=200, null=True)
+     email = models.CharField(max_length=200)
+ 
+     def __str__(self):
+         return self.name
+ 
++
+ class Product(models.Model):
+-    name = models.CharField(max_length=200, null=True)
++    name = models.CharField(max_length=200)
+     price = models.FloatField()
+-    digital = models.BooleanField(default=False, null=True, blank=True)
+-    #image
++    digital = models.BooleanField(default=False, null=True, blank=False)
+     image = models.ImageField(null=True, blank=True)
++
+     def __str__(self):
+         return self.name
+ 
+     @property
+-    def ImageURL(self):
++    def imageURL(self):
+         try:
+             url = self.image.url
+         except:
+@@ -30,13 +31,11 @@
+         return url
+ 
+ 
+-
+-
+ class Order(models.Model):
+-    customer = models.ForeignKey(Customer,on_delete=models.SET_NULL,blank=True,null=True)
+-    date_orderd = models.DateTimeField(auto_now_add=True)
++    customer = models.ForeignKey(Customer, on_delete=models.SET_NULL, null=True, blank=True)
++    date_ordered = models.DateTimeField(auto_now_add=True)
+     complete = models.BooleanField(default=False)
+-    transaction_id = models.CharField(max_length=200,null=True)
++    transaction_id = models.CharField(max_length=100, null=True)
+ 
+     def __str__(self):
+         return str(self.id)
+@@ -47,21 +46,22 @@
+         orderitems = self.orderitem_set.all()
+         for i in orderitems:
+             if i.product.digital == False:
+-                shipping =True
++                shipping = True
+         return shipping
+ 
+-
+     @property
+     def get_cart_total(self):
+         orderitems = self.orderitem_set.all()
+         total = sum([item.get_total for item in orderitems])
+         return total
++
+     @property
+     def get_cart_items(self):
+         orderitems = self.orderitem_set.all()
+         total = sum([item.quantity for item in orderitems])
+         return total
+ 
++
+ class OrderItem(models.Model):
+     product = models.ForeignKey(Product, on_delete=models.SET_NULL, null=True)
+     order = models.ForeignKey(Order, on_delete=models.SET_NULL, null=True)
+@@ -74,14 +74,14 @@
+         return total
+ 
+ 
+-class ShippingAdress(models.Model):
++class ShippingAddress(models.Model):
+     customer = models.ForeignKey(Customer, on_delete=models.SET_NULL, null=True)
+     order = models.ForeignKey(Order, on_delete=models.SET_NULL, null=True)
+-    adress = models.CharField(max_length=200, null=False)
++    address = models.CharField(max_length=200, null=False)
+     city = models.CharField(max_length=200, null=False)
+     state = models.CharField(max_length=200, null=False)
+     zipcode = models.CharField(max_length=200, null=False)
+     date_added = models.DateTimeField(auto_now_add=True)
+ 
+     def __str__(self):
+-        return self.adress
+\ No newline at end of file
++        return self.address
+\ No newline at end of file
+Index: ecommerce/store/templates/store/main.html
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>{% load static %}\r\n<!DOCTYPE html>\r\n<html lang=\"en\">\r\n<head>\r\n    <meta charset=\"UTF-8\">\r\n    <title>STORE</title>\r\n    <link rel=\"stylesheet\" href=\"https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css\" integrity=\"sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z\" crossorigin=\"anonymous\">\r\n\r\n    <link rel=\"stylesheet\" type=\"text/css\" href=\"{% static 'css/main.css' %}\">\r\n\r\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1\">\r\n\r\n    <script type=\"text/javascript\">\r\n        var user = '{{request.user}}'\r\n        function getToken(name) {\r\n          let cookieValue = null;\r\n          if (document.cookie && document.cookie !== '') {\r\n              const cookies = document.cookie.split(';');\r\n              for (let i = 0; i < cookies.length; i++) {\r\n                  const cookie = cookies[i].trim();\r\n                  // Does this cookie string begin with the name we want?\r\n                  if (cookie.substring(0, name.length + 1) === (name + '=')) {\r\n                      cookieValue = decodeURIComponent(cookie.substring(name.length + 1));\r\n                      break;\r\n                  }\r\n              }\r\n          }\r\n          return cookieValue;\r\n      }\r\n    const csrftoken = getToken('csrftoken');\r\n    </script>\r\n\r\n\r\n</head>\r\n<body>\r\n<!--Navbar-->\r\n    <nav class=\"navbar navbar-expand-lg navbar-dark bg-dark\">\r\n  <a class=\"navbar-brand\" href=\"{% url 'store' %}\">Ecom</a>\r\n  <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarSupportedContent\" aria-controls=\"navbarSupportedContent\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\r\n    <span class=\"navbar-toggler-icon\"></span>\r\n  </button>\r\n\r\n  <div class=\"collapse navbar-collapse\" id=\"navbarSupportedContent\">\r\n    <ul class=\"navbar-nav mr-auto\">\r\n      <li class=\"nav-item active\">\r\n        <a class=\"nav-link\" href=\"{% url 'store' %}\">Store <span class=\"sr-only\">(current)</span></a>\r\n      </li>\r\n    </ul>\r\n      <div class=\"form-inline my-2 my-lg-0\">\r\n\t     \t<a href=\"#\"class=\"btn btn-warning\">Login</a>\r\n\r\n\t     \t<a href=\"{% url 'cart' %}\">\r\n\t    \t\t<img  id=\"cart-icon\" src=\"{% static 'images/cart.png' %}\">\r\n\t    \t</a>\r\n\t    \t<p id=\"cart-total\">{{ cartItems }}</p>\r\n\r\n      </div>\r\n  </div>\r\n</nav>\r\n    <div class=\"container\">\r\n        {% block content%}\r\n        {% endblock%}\r\n\r\n    </div>\r\n\r\n\r\n\r\n\r\n<script src=\"https://code.jquery.com/jquery-3.5.1.slim.min.js\" integrity=\"sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj\" crossorigin=\"anonymous\"></script>\r\n<script src=\"https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js\" integrity=\"sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN\" crossorigin=\"anonymous\"></script>\r\n<script src=\"https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js\" integrity=\"sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV\" crossorigin=\"anonymous\"></script>\r\n\r\n\r\n<script type=\"text/javascript\" src=\"{% static 'js/cart.js' %}\"></script>\r\n\r\n</body>\r\n</html>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- ecommerce/store/templates/store/main.html	(revision 3fb513d2214350d6b036bb1f8a17414253711c50)
++++ ecommerce/store/templates/store/main.html	(date 1603379724209)
+@@ -4,29 +4,29 @@
+ <head>
+     <meta charset="UTF-8">
+     <title>STORE</title>
+-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
++    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1" />
++
++	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+ 
+-    <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
++	<link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+ 
+-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1">
+-
+     <script type="text/javascript">
+         var user = '{{request.user}}'
+         function getToken(name) {
+-          let cookieValue = null;
+-          if (document.cookie && document.cookie !== '') {
+-              const cookies = document.cookie.split(';');
+-              for (let i = 0; i < cookies.length; i++) {
+-                  const cookie = cookies[i].trim();
+-                  // Does this cookie string begin with the name we want?
+-                  if (cookie.substring(0, name.length + 1) === (name + '=')) {
+-                      cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+-                      break;
+-                  }
+-              }
+-          }
+-          return cookieValue;
+-      }
++		    var cookieValue = null;
++		    if (document.cookie && document.cookie !== '') {
++		        var cookies = document.cookie.split(';');
++		        for (var i = 0; i < cookies.length; i++) {
++		            var cookie = cookies[i].trim();
++		            // Does this cookie string begin with the name we want?
++		            if (cookie.substring(0, name.length + 1) === (name + '=')) {
++		                cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
++		                break;
++		            }
++		        }
++		    }
++		    return cookieValue;
++		}
+     const csrftoken = getToken('csrftoken');
+     </script>
+ 
+@@ -59,7 +59,7 @@
+ </nav>
+     <div class="container">
+         {% block content%}
+-        {% endblock%}
++        {% endblock content%}
+ 
+     </div>
+ 
+Index: ecommerce/store/admin.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>from django.contrib import admin\r\nfrom .models import *\r\n# Register your models here.\r\n\r\nadmin.site.register(Customer)\r\nadmin.site.register(Product)\r\nadmin.site.register(Order)\r\nadmin.site.register(OrderItem)\r\nadmin.site.register(ShippingAdress)
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- ecommerce/store/admin.py	(revision 3fb513d2214350d6b036bb1f8a17414253711c50)
++++ ecommerce/store/admin.py	(date 1603382852262)
+@@ -6,4 +6,4 @@
+ admin.site.register(Product)
+ admin.site.register(Order)
+ admin.site.register(OrderItem)
+-admin.site.register(ShippingAdress)
+\ No newline at end of file
++admin.site.register(ShippingAddress)
+\ No newline at end of file
+Index: ecommerce/static/css/main.css
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>body{\r\n\tbackground-color: hsl(0, 0%, 98%);\r\n}\r\n\r\nh1,h2,h3,h4,h5,h6{\r\n\tcolor:hsl(0, 0%, 30%);\r\n}\r\n\r\n.box-element{\r\n\tbox-shadow:hsl(0, 0%, 80%) 0 0 16px;\r\n\tbackground-color: #fff;\r\n\tborder-radius: 4px;\r\n\tpadding: 10px;\r\n}\r\n\r\n.thumbnail{\r\n\twidth: 100%;\r\n\theight: 200px;\r\n\t-webkit-box-shadow: -1px -3px 5px -2px rgba(214,214,214,1);\r\n    -moz-box-shadow: -1px -3px 5px -2px rgba(214,214,214,1);\r\n    box-shadow: -1px -3px 5px -2px rgba(214,214,214,1);\r\n}\r\n\r\n.product{\r\n\tborder-radius: 0 0 4px 4px;\r\n}\r\n\r\n.bg-dark{\r\n\tbackground-color: #4f868c!important;\r\n}\r\n\r\n#cart-icon{\r\n\twidth:25px;\r\n\tdisplay: inline-block;\r\n\tmargin-left: 15px;\r\n}\r\n\r\n#cart-total{\r\n\tdisplay: block;\r\n\ttext-align: center;\r\n\tcolor:#fff;\r\n\tbackground-color: red;\r\n\twidth: 20px;\r\n\theight: 25px;\r\n\tborder-radius: 50%;\r\n\tfont-size: 14px;\r\n}\r\n\r\n.col-lg-4, .col-lg-6, .col-lg-8, .col-lg-12{\r\n\tmargin-top: 10px;\r\n}\r\n\r\n.btn{\r\n\tborder-radius: 0;\r\n}\r\n\r\n.row-image{\r\n\twidth: 100px;\r\n}\r\n\r\n.form-field{\r\n\twidth:250px;\r\n\tdisplay: inline-block;\r\n\tpadding: 5px;\r\n}\r\n\r\n.cart-row{\r\n\tdisplay: flex;\r\n    align-items: flex-stretch;\r\n    padding-bottom: 10px;\r\n    margin-bottom: 10px;\r\n    border-bottom: 1px solid #ececec;\r\n\r\n}\r\n\r\n.quantity{\r\n\tdisplay: inline-block;\r\n\tfont-weight: 700;\r\n\tpadding-right:10px;\r\n\r\n\r\n}\r\n\r\n.chg-quantity{\r\n\twidth: 12px;\r\n\tcursor: pointer;\r\n\tdisplay: block;\r\n\tmargin-top: 5px;\r\n\ttransition:.1s;\r\n}\r\n\r\n.chg-quantity:hover{\r\n\topacity: .6;\r\n}\r\n\r\n\r\n.hidden{\r\n\tdisplay: none!important;\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- ecommerce/static/css/main.css	(revision 3fb513d2214350d6b036bb1f8a17414253711c50)
++++ ecommerce/static/css/main.css	(date 1603382463135)
+@@ -66,7 +66,7 @@
+ 
+ .cart-row{
+ 	display: flex;
+-    align-items: flex-stretch;
++    align-items: stretch;
+     padding-bottom: 10px;
+     margin-bottom: 10px;
+     border-bottom: 1px solid #ececec;
+Index: ecommerce/store/templates/store/cart.html
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>{% extends 'store/main.html' %}\r\n{% load static  %}\r\n\r\n{% block content %}\r\n    <div class=\"row\">\r\n        <div class=\"col-lg-12\">\r\n            <div class=\"box-element\">\r\n                <a class=\"btn btn-outline-dark\" href=\"{% url 'store'%}\">&#x2190; Continue shopping</a>\r\n                <br>\r\n                <br>\r\n                <table class=\"table\">\r\n                    <tr>\r\n                        <th><h5>Items: <strong>{{ order.get_cart_items }}</strong></h5></th>\r\n                        <th><h5>Total: <strong>{{ order.get_cart_total|floatformat:2 }}</strong></h5></th>\r\n                        <th>\r\n                            <a style=\"float:right; margin:5px\" class=\"btn btn-success\" href=\"{% url 'checkout' %}\">Check out</a>\r\n                        </th>\r\n                    </tr>\r\n                </table>\r\n            </div>\r\n            <br>\r\n            <div class=\"box-element\">\r\n                <div  class=\"cart-row\">\r\n                    <div style=\"flex: 2\"></div>\r\n                    <div style=\"flex: 2\"><strong>Item</strong></div>\r\n                    <div style=\"flex: 1\"><strong>Price</strong></div>\r\n                    <div style=\"flex: 1\"><strong>Quantity</strong></div>\r\n                    <div style=\"flex: 1\"><strong>Total</strong></div>\r\n                </div>\r\n                {% for item in items %}\r\n                <div  class=\"cart-row\">\r\n                    <div style=\"flex: 2\"><img class=\"row-image\" src=\"{{ item.product.ImageURL }}\"></div>\r\n                    <div style=\"flex: 2\">{{item.product.name }}</div>\r\n                    <div style=\"flex: 1\">{{item.product.price|floatformat:2 }}</div>\r\n                    <div style=\"flex: 1\">\r\n                        <p class=\"quantity\">{{item.quantity}}</p>\r\n                        <div class=\"quantity\">\r\n                            <img data-product ={{ item.product.id }} data-action ='add' class=\"chg-quantity update-cart\" src=\"{% static 'images/arrow-up.png'%}\">\r\n                            <img data-product ={{ item.product.id }} data-action ='remove' class=\"chg-quantity update-cart\" src=\"{% static 'images/arrow-down.png'%}\">\r\n                        </div>\r\n                    </div>\r\n                    <div style=\"flex: 1\">{{item.get_total}}</div>\r\n                </div>\r\n                {% endfor %}\r\n\r\n            </div>\r\n        </div>\r\n\r\n    </div>\r\n\r\n\r\n\r\n{% endblock content %}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- ecommerce/store/templates/store/cart.html	(revision 3fb513d2214350d6b036bb1f8a17414253711c50)
++++ ecommerce/store/templates/store/cart.html	(date 1603374704234)
+@@ -11,9 +11,9 @@
+                 <table class="table">
+                     <tr>
+                         <th><h5>Items: <strong>{{ order.get_cart_items }}</strong></h5></th>
+-                        <th><h5>Total: <strong>{{ order.get_cart_total|floatformat:2 }}</strong></h5></th>
++                        <th><h5>Total: <strong>{{order.get_cart_total|floatformat:2}}</strong></h5></th>
+                         <th>
+-                            <a style="float:right; margin:5px" class="btn btn-success" href="{% url 'checkout' %}">Check out</a>
++                            <a style="float:right; margin:5px;" class="btn btn-success" href="{% url 'checkout' %}">Check out</a>
+                         </th>
+                     </tr>
+                 </table>
+@@ -31,7 +31,7 @@
+                 <div  class="cart-row">
+                     <div style="flex: 2"><img class="row-image" src="{{ item.product.ImageURL }}"></div>
+                     <div style="flex: 2">{{item.product.name }}</div>
+-                    <div style="flex: 1">{{item.product.price|floatformat:2 }}</div>
++                    <div style="flex: 1">{{item.product.price|floatformat:2}}</div>
+                     <div style="flex: 1">
+                         <p class="quantity">{{item.quantity}}</p>
+                         <div class="quantity">
+Index: ecommerce/store/migrations/0006_auto_20201022_1230.py
+===================================================================
+--- ecommerce/store/migrations/0006_auto_20201022_1230.py	(revision 3fb513d2214350d6b036bb1f8a17414253711c50)
++++ ecommerce/store/migrations/0006_auto_20201022_1230.py	(revision 3fb513d2214350d6b036bb1f8a17414253711c50)
+@@ -1,18 +0,0 @@
+-# Generated by Django 3.1.2 on 2020-10-22 05:30
+-
+-from django.db import migrations, models
+-
+-
+-class Migration(migrations.Migration):
+-
+-    dependencies = [
+-        ('store', '0005_auto_20201022_1228'),
+-    ]
+-
+-    operations = [
+-        migrations.AlterField(
+-            model_name='order',
+-            name='complete',
+-            field=models.BooleanField(default=False),
+-        ),
+-    ]
+Index: ecommerce/store/migrations/0004_auto_20201022_1223.py
+===================================================================
+--- ecommerce/store/migrations/0004_auto_20201022_1223.py	(revision 3fb513d2214350d6b036bb1f8a17414253711c50)
++++ ecommerce/store/migrations/0004_auto_20201022_1223.py	(revision 3fb513d2214350d6b036bb1f8a17414253711c50)
+@@ -1,19 +0,0 @@
+-# Generated by Django 3.1.2 on 2020-10-22 05:23
+-
+-from django.db import migrations, models
+-import django.db.models.deletion
+-
+-
+-class Migration(migrations.Migration):
+-
+-    dependencies = [
+-        ('store', '0003_auto_20201022_1118'),
+-    ]
+-
+-    operations = [
+-        migrations.AlterField(
+-            model_name='orderitem',
+-            name='product',
+-            field=models.ForeignKey(null=True, on_delete=django.db.models.deletion.SET_NULL, to='store.product'),
+-        ),
+-    ]
+Index: ecommerce/store/migrations/0005_auto_20201022_1228.py
+===================================================================
+--- ecommerce/store/migrations/0005_auto_20201022_1228.py	(revision 3fb513d2214350d6b036bb1f8a17414253711c50)
++++ ecommerce/store/migrations/0005_auto_20201022_1228.py	(revision 3fb513d2214350d6b036bb1f8a17414253711c50)
+@@ -1,49 +0,0 @@
+-# Generated by Django 3.1.2 on 2020-10-22 05:28
+-
+-from django.db import migrations, models
+-import django.db.models.deletion
+-
+-
+-class Migration(migrations.Migration):
+-
+-    dependencies = [
+-        ('store', '0004_auto_20201022_1223'),
+-    ]
+-
+-    operations = [
+-        migrations.AlterField(
+-            model_name='orderitem',
+-            name='order',
+-            field=models.ForeignKey(null=True, on_delete=django.db.models.deletion.SET_NULL, to='store.order'),
+-        ),
+-        migrations.AlterField(
+-            model_name='shippingadress',
+-            name='adress',
+-            field=models.CharField(max_length=200),
+-        ),
+-        migrations.AlterField(
+-            model_name='shippingadress',
+-            name='city',
+-            field=models.CharField(max_length=200),
+-        ),
+-        migrations.AlterField(
+-            model_name='shippingadress',
+-            name='customer',
+-            field=models.ForeignKey(null=True, on_delete=django.db.models.deletion.SET_NULL, to='store.customer'),
+-        ),
+-        migrations.AlterField(
+-            model_name='shippingadress',
+-            name='order',
+-            field=models.ForeignKey(null=True, on_delete=django.db.models.deletion.SET_NULL, to='store.order'),
+-        ),
+-        migrations.AlterField(
+-            model_name='shippingadress',
+-            name='state',
+-            field=models.CharField(max_length=200),
+-        ),
+-        migrations.AlterField(
+-            model_name='shippingadress',
+-            name='zipcode',
+-            field=models.CharField(max_length=200),
+-        ),
+-    ]
+Index: ecommerce/store/migrations/0003_auto_20201022_1118.py
+===================================================================
+--- ecommerce/store/migrations/0003_auto_20201022_1118.py	(revision 3fb513d2214350d6b036bb1f8a17414253711c50)
++++ ecommerce/store/migrations/0003_auto_20201022_1118.py	(revision 3fb513d2214350d6b036bb1f8a17414253711c50)
+@@ -1,18 +0,0 @@
+-# Generated by Django 3.1.2 on 2020-10-22 04:18
+-
+-from django.db import migrations, models
+-
+-
+-class Migration(migrations.Migration):
+-
+-    dependencies = [
+-        ('store', '0002_product_image'),
+-    ]
+-
+-    operations = [
+-        migrations.AlterField(
+-            model_name='product',
+-            name='digital',
+-            field=models.BooleanField(blank=True, default=False, null=True),
+-        ),
+-    ]
+Index: ecommerce/store/migrations/0007_auto_20201022_1533.py
+===================================================================
+--- ecommerce/store/migrations/0007_auto_20201022_1533.py	(revision 3fb513d2214350d6b036bb1f8a17414253711c50)
++++ ecommerce/store/migrations/0007_auto_20201022_1533.py	(revision 3fb513d2214350d6b036bb1f8a17414253711c50)
+@@ -1,18 +0,0 @@
+-# Generated by Django 3.1.2 on 2020-10-22 08:33
+-
+-from django.db import migrations, models
+-
+-
+-class Migration(migrations.Migration):
+-
+-    dependencies = [
+-        ('store', '0006_auto_20201022_1230'),
+-    ]
+-
+-    operations = [
+-        migrations.AlterField(
+-            model_name='customer',
+-            name='email',
+-            field=models.CharField(max_length=200),
+-        ),
+-    ]
+Index: ecommerce/store/migrations/0002_product_image.py
+===================================================================
+--- ecommerce/store/migrations/0002_product_image.py	(revision 3fb513d2214350d6b036bb1f8a17414253711c50)
++++ ecommerce/store/migrations/0002_product_image.py	(revision 3fb513d2214350d6b036bb1f8a17414253711c50)
+@@ -1,18 +0,0 @@
+-# Generated by Django 3.1.1 on 2020-10-11 15:14
+-
+-from django.db import migrations, models
+-
+-
+-class Migration(migrations.Migration):
+-
+-    dependencies = [
+-        ('store', '0001_initial'),
+-    ]
+-
+-    operations = [
+-        migrations.AddField(
+-            model_name='product',
+-            name='image',
+-            field=models.ImageField(blank=True, null=True, upload_to=''),
+-        ),
+-    ]
+Index: .idea/dataSources.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- .idea/dataSources.xml	(date 1603382463264)
++++ .idea/dataSources.xml	(date 1603382463264)
+@@ -0,0 +1,11 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
++    <data-source source="LOCAL" name="db" uuid="b922f783-87e8-46fc-8056-bedd09bebb1d">
++      <driver-ref>sqlite.xerial</driver-ref>
++      <synchronize>true</synchronize>
++      <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
++      <jdbc-url>jdbc:sqlite:C:\Users\HUST-1670\Desktop\ecommerce\ecommerce\db.sqlite3</jdbc-url>
++    </data-source>
++  </component>
++</project>
+\ No newline at end of file
