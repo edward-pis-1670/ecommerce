@@ -20,7 +20,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="98318bd0-ae6e-4560-ac26-86feacdd3bed" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/ecommerce.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/ecommerce.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ecommerce/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ecommerce/static/js/cart.js" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce/static/js/cart.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ecommerce/store/templates/store/cart.html" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce/store/templates/store/cart.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ecommerce/store/templates/store/checkout.html" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce/store/templates/store/checkout.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ecommerce/store/templates/store/main.html" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce/store/templates/store/main.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ecommerce/store/utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce/store/utils.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ecommerce/store/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce/store/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,7 +74,7 @@
       <recent name="C:\Users\mai.xuan.hoa\PycharmProjects\ecommerce\ecommerce\static\images" />
     </key>
   </component>
-  <component name="SpellCheckerSettings" BundledDictionaries="0" Folders="0" CustomDictionaries="0" Dictionaries="0" CorrectionsLimit="5" DefaultDictionary="application-level" UseSingleDictionary="true" />
+  <component name="SpellCheckerSettings" BundledDictionaries="0" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" Dictionaries="0" CorrectionsLimit="5" DefaultDictionary="application-level" UseSingleDictionary="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -95,6 +104,7 @@
       <workItem from="1603418949252" duration="10000" />
       <workItem from="1603418994715" duration="75000" />
       <workItem from="1603419087791" duration="59000" />
+      <workItem from="1604308746545" duration="1381000" />
     </task>
     <servers />
   </component>
